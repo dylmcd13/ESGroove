@@ -1,0 +1,42 @@
+Relational schema
+
+Venues(name, established, type, address)
+primary key address
+
+Bands(name, genre, nummembers, yearsactive)
+primary key name
+
+Album: changes album to a weak entity set because it makes sense and because of this songs
+no longer has a relationship to bands, bands release singles and singles are considered albums)
+Album(title, bname, numtracks, length, releaseyear)
+primary key title bname
+foreign key bname
+
+Songs(title, Atitle, Bname, length)
+primary key title Atitle Bname)
+foreign key Atitle Bname
+
+Facebook Twitter Intstagram
+they are still one to one relations but i added a band name attribute them
+
+Facebook(Url, Bname)
+primary key Url
+
+Instagram(handle, Bname)
+primary key handle
+
+Twitter(handle, Bname)
+primary key handle
+
+members(name, instrument, Bname)
+primary key name
+foreign key Bname
+
+Merch(Bname, type, price)
+primary key type
+foreign key Bname
+
+Travelto(address, Bname)
+primary key(address, Bname)
+foreign key address
+foreign key bname
