@@ -28,7 +28,9 @@ while($row=mysqli_fetch_array($r)){
 }
 
 echo "</table>";
-
+echo <br>;
+echo <br>;
+echo <br>;
 
 $query2 = "SELECT  * FROM Venues WHERE name='$venueName'";
 $s=mysqli_query($connection, $query2);
