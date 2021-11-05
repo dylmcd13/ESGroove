@@ -12,7 +12,7 @@ $query1="SELECT  * FROM Bands  WHERE";
 
  if($_POST['BandSearchFilter'] =="bandName") {
 
-         $query1 .= " name='$artistName'";
+         $query1 .= " name like '%$artistName'%";
 
         }
  if($_POST['BandSearchFilter'] =="genre") {
