@@ -17,7 +17,7 @@ $query1="SELECT  * FROM Bands  WHERE";
         }
  if($_POST['BandSearchFilter'] =="genre") {
 
-          $query1 .= " genre='$artistName'";
+          $query1 .= " genre like '%$artistName%'";
 
         }
 
@@ -58,12 +58,7 @@ echo "<br>";
 $query2 = "SELECT  * FROM Venues WHERE";
  if($_POST['VenueSearchFilter'] =="venueName") {
 
-          $query2 .= " name ='$venueName'";
-
-        }
- if($_POST['VenueSearchFilter'] =="established") {
-
-          $query2 .= " established ='$venueName'";
+          $query2 .= " name like '%$venueName%'";
 
         }
  if($_POST['VenueSearchFilter'] =="established") {
@@ -73,12 +68,12 @@ $query2 = "SELECT  * FROM Venues WHERE";
         }
  if($_POST['VenueSearchFilter'] =="type") {
 
-          $query2 .= " type ='$venueName'";
+          $query2 .= " type like '%$venueName%'";
 
         }
  if($_POST['VenueSearchFilter'] =="address") {
 
-          $query2 .= " address ='$venueName'";
+          $query2 .= " address like '%$venueName%'";
 
         }
 $s=mysqli_query($connection, $query2);
