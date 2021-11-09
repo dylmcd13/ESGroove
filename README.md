@@ -11,6 +11,6 @@ Weekly assignments:
 Alex: Username and Password admin login page
 Dylan: Page for adding stuff to tables 
 Braiden: Page for deleting stuff from tables
-Ryan: 
-Cole: 
+Ryan: Page for updating stuff from tables
+Cole: Admin login page
 
