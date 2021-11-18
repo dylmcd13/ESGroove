@@ -31,7 +31,13 @@ else
   	<option value="Facebook">Facebook</option>
  	<option value="Instagram">Instagram</option>
   	<option value="Twitter">Twitter</option>
-</select> 
+	</select> 
+
+<form method = "post">
+	<input type = "submit" name = "placeholder">
+</form>
+
+
 
 
 
