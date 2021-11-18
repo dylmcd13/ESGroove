@@ -10,9 +10,9 @@
 
 
 
-<select name="table" id="table">
+<select name="table" id="table" onchange="javascript:location.href = this.value;">
 	<option value="default"selected>--Select--</option>
-  	<option value="Bands">Bands</option>
+  	<option value="updateBands.php">Bands</option>
   	<option value="Venues">Venues</option>
   	<option value="Albums">Albums</option>
   	<option value="Songs">Songs</option>
@@ -36,7 +36,7 @@ function myFunction() {
   document.getElementById("test").innerHTML = val;
   if(val == "Bands")
   {
-	document.getElementById("test").innerHTML = "Bands";
+	
   }
   else if(val == "Venues")
   {
