@@ -10,16 +10,6 @@ session_start();
 	$connection=@mysqli_connect('localhost', 'dmcdonald2', 'dmcdonald2', 'ESGrooveDB');
 	$showTableQuery = "select * from Bands;";
 	$updateQuery = "update Bands set";
-
-	/*
-	$r=mysqli_query($connection, $showTableQuery);
-	$row=mysqli_fetch_array($r);
-	$name = $row['name'];
-	$genre = $row['genre'];
-
-	echo printf('|%-50.50s |%.20s |', $name, $genre);
-	echo '<br>';
-	*/
 ?>
 
 <h style="font-size: 20pt"><b> Update Bands Table </b></h><br>
@@ -34,11 +24,7 @@ session_start();
 <?php
 
 $r=mysqli_query($connection, $showTableQuery);
-//$row=mysqli_fetch_array($r);
-//$name = $row['name'];
-//$genre = $row['genre'];
 
-//printf('|%-50.50s |%.5s |\n', $name, $genre);
 
 $mask = "|%-50.50s |%.5s |\n";
 
@@ -48,10 +34,6 @@ while($row=mysqli_fetch_array($r)){
 	$numMembers = $row['numMembers'];
 	$yearsActive = $row['yearsActive'];
 	echo '<option value="' . $row['name'] . $row['genre'] . '"> ' . $name  . ' || ' . $genre . ' || ' . $numMembers . ' || ' . $yearsActive .  '</option>';
-	//echo '<option value="' . $row['name'] . $row['genre'] . '"> ' . $name  . ' || ' . $genre . ' || ' . $numMembers . ' || ' . $yearsActive .  '</option>';
-	//echo '<option value="' . $row['name'] . $row['genre'] . '"> ' . $name  . ' || ' . $genre . ' || ' . $numMembers . ' || ' . $yearsActive .  '</option>';
-
-	//echo '<option value="' . $row['name'] . $row['genre'] .  '"> ' . printf('|%-50.50s |%.5s |', $name, $genre) . '</option>';
 
 }
 
