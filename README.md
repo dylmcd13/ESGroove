@@ -5,6 +5,11 @@ Braiden Ryan braidenjester@gmail.com
 Cole Nussear c.nussear@gmail.com
 Alex Hearne alexhearne84@gmail.com
 
+Update Page:
+https://lamp.salisbury.edu/~dmcdonald2/updateTableHome.php
+
+
+
 Weekly assignments:
 
 11/5 - 11/12
