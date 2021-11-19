@@ -10,7 +10,7 @@
 ?>
 
 <h style="font-size: 20pt"><b> Update Bands Table </b></h><br>
-
+<p> <u>Choose the row you want to edit (type in the corresponding data for the row correctly)</u> </p>
 
 <form>
 <input type="text" id="name" placeholder="Name">

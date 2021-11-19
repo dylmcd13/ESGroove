@@ -22,25 +22,9 @@
   	<option value="updateFacebook.php">Facebook</option>
  	<option value="updateInstagram.php">Instagram</option>
   	<option value="updateTwitter.php">Twitter</option>
-	</select> 
+	</select>
 
 
-<input type="button" value="Submit" onclick="form.submit()">
-
-
-<p id="test"></p>
-
-<script>
-
-function submit()
-{
-	if(document.getElementById("table").value == "Bands")
-	{
-		document.getElementById("table").value = "updateBands.php";
-	}
-}
-
-</script>
 
 
 
