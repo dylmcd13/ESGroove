@@ -22,7 +22,7 @@
   	<option value="updateFacebook.php">Facebook</option>
  	<option value="updateInstagram.php">Instagram</option>
   	<option value="updateTwitter.php">Twitter</option>
-	</select>
+</select>
 
 
 
