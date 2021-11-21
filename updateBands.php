@@ -32,8 +32,8 @@ while($row=mysqli_fetch_array($r)){
 	$genre = $row['genre'];
 	$numMembers = $row['numMembers'];
 	$yearsActive = $row['yearsActive'];
-	echo '<option value="' . $name.'"> ' . $name  . ' || ' . $genre . ' || ' . $numMembers . ' || ' . $yearsActive .  '</option>';
-
+	$arr = array($name, $genre, $numMembers, $yearsActive);
+	echo '<option data-name="'.$name.'" data-genre="'.$genre.'" data-numMembers="'.$numMembers.'" data-yearsActive="'.$yearsActive.'"."> ' . $name  . ' || ' . $genre . ' || ' . $numMembers . ' || ' . $yearsActive .  '</option>';
 }
 
 
@@ -44,51 +44,57 @@ while($row=mysqli_fetch_array($r)){
 <br>
 
 <form>
-<input type="text" id="name" name="name" size="50">
+<input type="text" id="nameBox" name="name" size="50">
 <label for="name">Band Name</label>
 </form>
 <br>
 
 <form>
-<input type="text" id="genre" name="genre" size="50">
+<input type="text" id="genreBox" name="genre" size="50">
 <label for="genre">Genre</label>
 </form>
 <br>
 
 <form>
-<input type="text" id="numMembers" name="numMembers" size="3">
+<input type="text" id="numMembersBox" name="numMembers" size="3">
 <label for="numMembers">Number of Members</label>
 </form>
 <br>
 
 <form>
-<input type="text" id="yearsActive" name="yearsActive" size="3">
+<input type="text" id="yearsActiveBox" name="yearsActive" size="3">
 <label for="yearsActive">Years Active</label>
+
+<br>
+<input type="submit" action="updateQuery()" value="Update">
+
 </form>
 <br>
 
+
+<p id="o"></p>
 
 <script>
 
 function insert()
 {
-	$nameInsert = document.getElementById('table').value;
-	document.getElementById('name').value = $nameInsert;
 
-	$genreInsert
+	var selectTable = document.getElementById('table');
+	var selectedOption = selectTable.options[selectTable.selectedIndex];
+
+
+	document.getElementById('nameBox').value = selectedOption.getAttribute('data-name');
+	document.getElementById('genreBox').value = selectedOption.getAttribute('data-genre');
+	document.getElementById('numMembersBox').value = selectedOption.getAttribute('data-numMembers');
+	document.getElementById('yearsActiveBox').value = selectedOption.getAttribute('data-yearsActive');
+//	$updateQuery = "update Bands set";
+	$updateQuery += " name=". selectedOption.getAttribute('data-name')
+	document.getElementById('o').innerHTML = $updateQuery;
+
 }
 
 
 </script>
-
-
-
-
-
-
-
-
-
 
 
 
