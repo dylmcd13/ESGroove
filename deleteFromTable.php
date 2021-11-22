@@ -1,77 +1,44 @@
-<!DOCTYPE html>
+<?php
+session_start();
+?>
 
+<!DOCTYPE html>
 <html>
 
-<h style="font-size: 20pt"><b> Delete Form Table </b></h>
+<?php 	
+	$connection=@mysqli_connect('localhost', 'bryan4', 'bryan4', 'ESGrooveDB');
+	$showTableQuery = "select * from Bands;";
+	$deleteQuery = "delete * from Bands where name =";
 
+?>
+
+<h style="font-size: 20pt"><b> Delete From Bands </b></h><br>
+<p> <u>Choose the row you want to delete. Sorted by name.</u> </p>
+
+<select name="table" id="table" onchange="insert()" style="width: 800px;">
+	<option value=""selected>--Select--</option>
 
 
 <?php
 
-/* ***UNCOMMENT WHEN PUTTING INTO ACADWEB1
+	$r=mysqli_query($connection, $showTableQuery);
 
-if($connection=@mysqli_connect('localhost', 'dmcdonald2', 'dmcdonald2', 'ESGrooveDB'))
-
-{
-
-	print 'SUCCESS';
-
-}
-
-else
-
-{
-
-	print 'UNSUCCESSFUL';
+	while($row=mysqli-fetch-array($r)){
+		$name = $row['name'];
+		$genre = $row['genre'];
+		$numMembers = $row['numMembers'];
+		$yearsActive = $row['yearsActive'];
+		$arr = array9$name, $genre, $numMembers, $yearsActive);
+		echo '<option data-name="'.$name.'" data-genre="'.genre.'" data-numMembers="'.$numMembers.'" data-yearsActive="'.yearsActive.'"."> ' . $name . '||' . $genre . '||' . $numMembers . '||' . $yearsActive . '</option>';
 
 }
-
-*/
-
-
 
 ?>
 
+</select>
+
+
+<br>
 <br>
 
-<br>
-
-
-
-<label for="Table">Choose a Table:</label>
-
-
-
-<select name="table" id="table">
-
-	<option value="">--Select--</option>
-
-  	<option value="Bands">Bands</option>
-
-  	<option value="Venues">Venues</option>
-
-  	<option value="Albums">Albums</option>
-
-  	<option value="Songs">Songs</option>
-
-  	<option value="Members">Members</option>
-
-  	<option value="Merch">Merch</option>
-
-  	<option value="Travelto">Travelto</option>
-
-  	<option value="Facebook">Facebook</option>
-
- 	<option value="Instagram">Instagram</option>
-
-  	<option value="Twitter">Twitter</option>
-
-</select> 
-
-
-
-
-
-
-
-</html>
+<input type="submit" action="deleteQuery()" value="Delete">
