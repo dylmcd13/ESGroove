@@ -32,7 +32,7 @@ while($row=mysqli_fetch_array($r)){
 	$genre = $row['genre'];
 	$numMembers = $row['numMembers'];
 	$yearsActive = $row['yearsActive'];
-	$arr = array($name, $genre, $numMembers, $yearsActive);
+	
 	echo '<option data-name="'.$name.'" data-genre="'.$genre.'" data-numMembers="'.$numMembers.'" data-yearsActive="'.$yearsActive.'"."> ' . $name  . ' || ' . $genre . ' || ' . $numMembers . ' || ' . $yearsActive .  '</option>';
 }
 

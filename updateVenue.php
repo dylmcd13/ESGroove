@@ -19,7 +19,7 @@ session_start();
 
 
 
-<select name="table" id="table" onchange="javascript:location.href = this.value;" style="width: 800px;">
+<select name="table" id="table" onchange="insert()" style="width: 800px;">
         <option value=""selected>--Select--</option>
 
 <?php
@@ -27,15 +27,13 @@ session_start();
 $r=mysqli_query($connection, $showTableQuery);
 
 
-$mask = "|%-50.50s |%.5s |\n";
-
 while($row=mysqli_fetch_array($r)){
         $name = $row['name'];
         $estab = $row['established'];
         $type = $row['type'];
         $address = $row['address'];
 
-        echo '<option value="' . $row['name'] . $row['established'] . $row['type'] . $row['address'] . '"> ' . $name  . ' || ' . $estab . ' || ' . $type . ' || ' . $address . '</option>';
+        echo '<option data-name="' .$name.'" data-estab="'.$estab.'" data-type="'.$type.'" data-address="'.$address.'". "> ' . $name  . ' || ' . $estab . ' || ' . $type . ' || ' . $address . '</option>';
 
 }
 
@@ -45,8 +43,60 @@ while($row=mysqli_fetch_array($r)){
 </select>
 
 
+<form>
+<input type="text" id="nameBox" name="VenueName" size="50">
+<label for="nameBox">Venue Name</label>
+</form>
+<br>
+
+<form>
+<input type="text" id="estabBox" name="estabBox" size="50">
+<label for="estabBox">Established</label>
+</form>
+<br>
+
+<form>
+<input type="text" id="typeBox" name="type" size="50">
+<label for="typeBox">Type of Venue</label>
+</form>
+<br>
+
+<form>
+<input type="text" id="addressBox" name="address" size="50">
+<label for="addressBox">Address</label>
+<br>
+<br>
+
+
+<br>
+<input type="submit" action="updateQuery()" value="Update">
+
+</form>
+<br>
+
+<script>
+
+function insert()
+{
+
+        var selectTable = document.getElementById('table');
+        var selectedOption = selectTable.options[selectTable.selectedIndex];
+
+
+        document.getElementById('nameBox').value = selectedOption.getAttribute('data-name');
+        document.getElementById('estabBox').value = selectedOption.getAttribute('data-estab');
+        document.getElementById('typeBox').value = selectedOption.getAttribute('data-type');
+        document.getElementById('addressBox').value = selectedOption.getAttribute('data-address');
+
+        $updateQuery += " name=". selectedOption.getAttribute('data-name')
+        document.getElementById('o').innerHTML = $updateQuery;
+
+}
+
+
+</script>
+
+
 
 </html>
-
-
 
