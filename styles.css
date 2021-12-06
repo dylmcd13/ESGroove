@@ -1,0 +1,362 @@
+
+#navtab {
+
+   float: left;
+
+}
+body { 
+  background-color: #333;
+ }
+#navtab :hover {
+  background-color: #111;
+}
+#navlink{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px 16px;
+  text-decoration: none;
+}
+
+#navbar{
+  font: bold 16px sans-serif;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+.footer-distributed{
+  background: #444;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  font: bold 16px sans-serif;
+  text-align: left;
+  padding: 50px 60px 40px;
+  overflow: hidden;
+}
+.footer-distributed h3{
+  color:  #ffffff;
+  font: normal 36px 'Roboto', cursive;
+  margin: 0 0 10px;
+}
+
+.footer-distributed h3 span{
+  color:  #5383d3;
+}
+.footer-distributed .footer-links{
+  color:  #ffffff;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.footer-distributed .footer-links a{
+  display:inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color:  inherit;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-company-name{
+  color:  #8f9296;
+  font-size: 12px;
+  font-weight: normal;
+  margin: 0;
+}
+.footer-links :hover{
+ background-color: #111;
+
+}
+
+* {box-sizing:border-box}
+
+
+.slideshow-container {
+  max-width: 2000px;
+  position: relative;
+  margin: auto;
+  border-color: black;
+  border-width: 10px;
+
+}
+.mySlides {
+  display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+.dot {
+ 
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.featurette-divider {
+  margin: 5rem 0; 
+}
+
+#bannerCaption1{
+  background-color: white;
+  opacity: 75%;
+  position: absolute;
+  top: 80px;
+  right: 75;
+  font-size: 24px; 
+  left: 900;
+  font-family: Verdana;
+  font-style:  normal;
+  text-align: center;
+}
+
+#bannerCaption2{
+  background-color: white;
+  opacity: 75%;
+  position: absolute;
+  top: 80px;
+  left: 75;
+  font-size: 24px;
+  right: 900;
+  font-family: Verdana;
+  font-style: normal;
+  text-align: center;
+}
+#headerLogo{ color:  #ffffff;
+             font-size: 30px;
+             font-style: normal;
+             font-family: cursive;
+             margin: 5;
+             padding: 0;
+             float: right;
+            }
+
+#headerSpan{
+color:  #5383d3;
+}
+
+#searchPic{ 
+
+border-width: 5px;
+border-color: white;
+border-style: solid;
+float: right;
+margin-right: 50px;
+ }
+#title{
+
+  color: white;
+  font-size: 55px;
+  font-family: Verdana;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+#creditPic{
+border-width: 5px;
+border-color: white;
+border-style: solid;
+float: right;
+margin-right: 50px;
+
+
+}
+
+#searchDiv{
+
+  padding-bottom: 100px;
+  margin-bottom: 50px;
+}
+
+#loginField{ 
+width: 400px;
+margin:auto;
+text-align: center;
+padding-top: 100px;
+padding-bottom: 100px;
+margin-bottom: 250px;
+margin-top: 75px;
+background-color: #444;
+border-color:#5383d3; 
+border-width: 10px;
+border-radius: 25px;
+ }
+
+#loginLegend{
+  color:#5383d3; 
+  font-family: Verdana;
+  font-size: 24px;
+}
+#textLabel{
+  color: white;
+  font-family: Verdana;
+  font-size: 24px;
+  
+color: #5383d3;
+}
+
+#userName{
+  border-color: #5383d3;
+  border-width: 3px;
+  margin-bottom: 15px;
+  height: 26px;
+  font-family: Verdana;
+}
+#passWord{ 
+
+margin-bottom: 25px;
+border-color: #5383d3;
+height: 26px;
+border-width: 3px;
+font-family: Verdana;
+ }
+ #submit{
+  border-color:  #5383d3 ;
+  font-family: Verdana;
+  border-radius: 25px;
+  width: 100px;
+  border-width: 5px;
+  color: #5383d3  ;
+  background-color: #444;
+ }
+
+ #searchSet{
+width: 800px;
+margin:auto;
+text-align: center;
+padding-top: 100px;
+padding-bottom: 100px;
+margin-bottom: 100px;
+margin-top: 75px;
+background-color: #444;
+border-color:#5383d3; 
+border-width: 10px;
+border-radius: 25px;
+
+
+
+ }
+#searchLegend{
+  color:#5383d3; 
+  font-family: Verdana;
+  font-size: 24px;
+
+}
+#searchLabel{
+  color:#5383d3; 
+  font-family: Verdana;
+  font-size: 36px;
+
+}
+#BandSearchFilter{
+
+height: 40px;
+font-size: 36px;
+font-family: Verdana;
+color:#5383d3; 
+background-color: #444;
+border-color: #5383d3;
+}
+
+#artist{
+  height: 45px;
+font-size: 36px;
+font-family: Verdana;
+color:#5383d3; 
+border-color: #5383d3;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
+#VenueSearchFilter{
+height: 40px;
+font-size: 36px;
+font-family: Verdana;
+color:#5383d3; 
+background-color: #444;
+border-color: #5383d3;
+
+}
+#venue{
+  height: 45px;
+font-size: 36px;
+font-family: Verdana;
+color:#5383d3; 
+border-color: #5383d3;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
+#PerformanceSearchFilter{
+height: 40px;
+font-size: 36px;
+font-family: Verdana;
+color:#5383d3; 
+background-color: #444;
+border-color: #5383d3;
+}
+
+#performance{
+  height: 45px;
+font-size: 36px;
+font-family: Verdana;
+color:#5383d3; 
+border-color: #5383d3;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
