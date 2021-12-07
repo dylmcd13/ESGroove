@@ -162,6 +162,7 @@ body {
   font-family: Verdana;
   font-style:  normal;
   text-align: center;
+  width: 100px;
 }
 
 #bannerCaption2{
@@ -175,6 +176,7 @@ body {
   font-family: Verdana;
   font-style: normal;
   text-align: center;
+  width: 100px;
 }
 #headerLogo{ color:  #ffffff;
              font-size: 30px;
