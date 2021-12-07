@@ -18,9 +18,29 @@
 </div>
 <br>
 <h1 id="title">Administrator <span id="headerSpan">Menu</span></h1>
-
-
-
+<hr style="height:5px; background-color:white; border-color: white;">
+<fieldset id="searchSet">
+<form action="insertForm.php">
+<h2 id="searchLabel">Insert into the database</h2>
+<input type="submit" id="submit" value="Insert" style ="width: 200px; height:50px; font-size: 30px;">
+</form>
+</fieldset>
+<br>
+<br>
+<fieldset id="searchSet">
+<form action="deleteTableHome.php">
+<h2 id="searchLabel">Delete from the database</h2>
+<input type="submit" id="submit" value="Delete" style ="width: 200px; height:50px; font-size: 30px;">
+</form>
+</fieldset>
+<br>
+<br>
+<fieldset id="searchSet">
+<form action="updateTableHome.php">
+<h2 id="searchLabel">Update the database</h2>
+<input type="submit" id="submit" value="Update" style ="width: 200px; height:50px; font-size: 30px;">
+</form>
+</fieldset>
 
 
 
