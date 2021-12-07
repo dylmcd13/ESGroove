@@ -6,7 +6,7 @@
 
 	//echo $_SERVER['HTTP_REFERER'];
 
-	if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
+	if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/ESGroove/updateBands.php") //if came from updateBands.php
 	{
 
 		$updateNameBefore = $_POST['nameRead'];
@@ -46,7 +46,7 @@
 
 
 	}
-	else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateVenue.php") //if came from updateBands.php
+	else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/ESGroove/updateVenue.php") //if came from updateBands.php
 	{
 		$updateNameBefore = $_POST['nameRead'];
                 $updateEstablishedBefore = $_POST['establishedRead'];
@@ -77,6 +77,7 @@
 
 	}else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateAlbums.php") //if came from updateAlbums.php
         {
+/*
 		$updateTitleBefore = $_POST['titleRead'];
 		$updateBNameBefore = $_POST['BnameRead'];
 		$updateNumTracksBefore = $_POST['numTracksRead'];
@@ -105,6 +106,7 @@
         	?>">
 	<?php
 
+*/
         }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
         {
 
@@ -143,7 +145,7 @@
 
         }
 
-echo $sqlquery;
+//echo $sqlquery;
 
 
 
