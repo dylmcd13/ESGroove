@@ -28,7 +28,7 @@ header("location: Login.php");
 }
 if (isset($_SESSION['userName'])) {
 $username = $_SESSION['userName'];
-header("location: AdminMenu.html");
+header("location: AdminMenu.php");
 } else {
 header("location: Login.php");
 }
