@@ -22,7 +22,7 @@
     <hr style="height:5px; background-color:white; border-color: white;">
     <fieldset id="loginField">
         <legend id="loginLegend">Enter Login Information</legend>
-        <form>
+        <form action = "sessionLoggedIn.php" method = "post">
             <label for="userName" id="textLabel">Username:</label>
             <input type="text" name="userName" id="userName" placeholder="Enter Username....">
             <br> 
