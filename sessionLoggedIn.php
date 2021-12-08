@@ -17,7 +17,7 @@ $count = mysqli_num_rows($result);
 // If the posted values are equal to the database values, then session will be created for the user.
 if ($count > 0){
 $_SESSION['userName'] = $username;
-header("location: AdminMenu.php"); //whatever the name of our home page is
+header("location: AdminMenu.html"); //whatever the name of our home page is
 }else{
 header("location: Login.php");
 // If the login credentials do not match, an error message will be shown.
@@ -28,7 +28,7 @@ header("location: Login.php");
 }
 if (isset($_SESSION['userName'])) {
 $username = $_SESSION['userName'];
-header("location: AdminMenu.php");
+header("location: AdminMenu.html");
 } else {
 header("location: Login.php");
 }

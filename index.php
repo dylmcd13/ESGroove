@@ -34,7 +34,7 @@ information about the musicians, venues and the performances of the Easten Shore
     <div class="numbertext">3 / 4</div>
     <img src="folky.jpg" style="width: 100%; height:600px">
     <div id="bannerCaption2"><h2>Explore the Artists of the Shore</h2><hr style="width:75%; color: black;">
-    Use the artists tab to search for the artists that are from or have visited the Eastern Shore.
+    Use the artists tab to search for the artists that are from or have visited the Eastern Shore. If you dont know the specific artist's name you can search for artists based on different attributes such as song and album names, ther social media and more!!
      </div>
     </div>
 
@@ -43,7 +43,7 @@ information about the musicians, venues and the performances of the Easten Shore
     <img src="Seacrets.jpg" style="width: 100%; height:600px">
     <div id="bannerCaption1"><h2>Check out the Venues</h2><hr style="width:75%; color: black;">
     Use the Venues tab to search for the venues in the Eastern Shore and find details about them such as 
-    address, established year , and the type of venue</div>
+    address, established year, and the type of venue</div>
 </div>
 
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
