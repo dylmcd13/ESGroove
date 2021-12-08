@@ -143,8 +143,36 @@
 
 
 
-        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
+        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/ESGroove/updateMembers.php") //if came from updateMembers.php
         { //Members
+
+
+        $updateNameBefore = $_POST['nameRead'];
+        $updateInstrumentBefore = $_POST['instrumentRead'];
+        $updateBnameBefore = $_POST['BnameRead'];
+
+
+        $updateNameAfter = $_POST['name'];
+        $updateInstrumentAfter = $_POST['instrument'];
+        $updateBnameAfter = $_POST['Bname'];
+
+        echo "Original Member Name: " . $updateNameBefore . "<br>Updated Member Name: " . $updateNameAfter . "<br><br>Original Instrument: " . $updateInstrumentBefore . "<br>Updated Instrument: " . $updateInstrumentAfter . "<br><br>Original Band Name: " . $updateBnameBefore . "<br>Updated Band Name: " . $updateBnameAfter . "<br><br>Click 'OK' to make changes, or 'Cancel' to Cancel.";
+?>
+        <br><br>
+
+        <input type="button" value="Cancel" onclick="history.back()">
+        <input type="button" value="OK" onclick="
+        <?php
+
+                $sqlquery = "update Members set name='" . $updateNameAfter . "', instrument='" . $updateInstrumentAfter . "', Bname='" . $updateBnameAfter . "' WHERE name='" . $updateNameBefore . "' and Bname='" . $updateBnameBefore . "'";
+
+                $r = mysqli_query($connection, $sqlquery);
+
+
+        ?>">
+	<?php
+		//echo "<br>" . $sqlquery;
+
 
 
         }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
