@@ -24,10 +24,10 @@
         <legend id="loginLegend">Enter Login Information</legend>
         <form action = "sessionLoggedIn.php" method = "post">
             <label for="email" id="textLabel">Username:</label>
-            <input type="email" name="email" id="email" placeholder="Enter Username...." required />
+            <input type="email" name="email" id="userName" placeholder="Enter Username...." required />
             <br> 
             <label for="password" id="textLabel">Password:</label> 
-            <input type="password" name="password" id="password" placeholder="Enter Password...." required />
+            <input type="password" name="password" id="passWord" placeholder="Enter Password...." required />
             <br> 
             <input type="submit" name="submit" id="submit">
         </form>
