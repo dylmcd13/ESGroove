@@ -19,9 +19,12 @@ if ($count > 0){
 $_SESSION['email'] = $username;
 header("location: AdminMenu.php"); //whatever the name of our home page is
 }else{
-// If the login credentials do not match, an error message will be shown.
+header("location: Login.php");
+if ($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/ESGroove/Login.php")
+{
 echo "Invalid Login Credentials. Please try again.";
 }
+// If the login credentials do not match, an error message is shown.
 } else {
 header("location: Login.php");
 }
