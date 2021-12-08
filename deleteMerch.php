@@ -2,7 +2,7 @@
 
 
 
-<?php $connection=@mysqli_connect('localhost', 'bryan4', 'bryan4',
+<?php $connection=@mysqli_connect('localhost', 'dmcdonald2', 'dmcdonald2',
 	'ESGrooveDB'); $query="select * from Merch"; ?>
 
 
