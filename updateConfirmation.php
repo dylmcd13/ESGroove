@@ -7,7 +7,7 @@
 	//echo $_SERVER['HTTP_REFERER'];
 
 	if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/ESGroove/updateBands.php") //if came from updateBands.php
-	{
+	{ //Bands
 
 		$updateNameBefore = $_POST['nameRead'];
 		$updateGenreBefore = $_POST['genreRead'];
@@ -33,10 +33,7 @@
 				$r = mysqli_query($connection, $sqlquery);
 				if(mysqli_affected_rows($r) == 1)
 				{
-					?>echo "CHANGED!!!!!!!"<?php
-				}
-				else{
-					echo "echo '<p>DID NOT UPDATE!</p>'";
+					echo "Changed";
 				}
 
 
@@ -47,7 +44,9 @@
 
 	}
 	else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/ESGroove/updateVenue.php") //if came from updateBands.php
-	{
+	{ //Venues
+
+
 		$updateNameBefore = $_POST['nameRead'];
                 $updateEstablishedBefore = $_POST['establishedRead'];
                 $updateTypeBefore = $_POST['typeRead'];
@@ -75,24 +74,24 @@
 
                 <?php
 
-	}else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateAlbums.php") //if came from updateAlbums.php
-        {
-/*
+	}else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/ESGroove/updateAlbums.php") //if came from updateAlbums.php
+        { //Albums
+
 		$updateTitleBefore = $_POST['titleRead'];
 		$updateBNameBefore = $_POST['BnameRead'];
 		$updateNumTracksBefore = $_POST['numTracksRead'];
 		$updateLengthBefore = $_POST['lengthRead'];
 		$updateReleaseYearBefore = $_POST['releaseYearRead'];
 
-
 		$updateTitleAfter = $_POST['title'];
-		$updateBNameAfter = $_POST['BName'];
+		$updateBNameAfter = $_POST['Bname'];
 		$updateNumTracksAfter = $_POST['numTracks'];
 		$updateLengthAfter = $_POST['length'];
 		$updateReleaseYearAfter = $_POST['releaseYear'];
 
 		echo "Original Album Title: " . $updateTitleBefore . "<br>Updated Album Title: " . $updateTitleAfter . "<br><br>Original Band Name: " . $updateBNameBefore . "<br>Updated Band Name: " . $updateBNameAfter . "<br><br>Original Number of Tracks: " . $updateNumTracksBefore . "<br>Updated Number of Tracks: " . $updateNumTracksAfter . "<br><br>Original Album Length: " . $updateLengthBefore . "<br>Updated Album Length: " . $updateLengthAfter . "<br><br>Original Album Release Year: " . $updateReleaseYearBefore . "<br>Updated Album Release Year: " . $updateReleaseYearAfter . "<br><br>Click 'OK' to make changes, or 'Cancel' to Cancel.";
 
+		?>
         	<br><br>
 
         	<input type="button" value="Cancel" onclick="history.back()">
@@ -100,47 +99,38 @@
         	<?php
 
                 	$sqlquery = "update Album set title='" . $updateTitleAfter . "', Bname='" . $updateBNameAfter . "', numTracks=" . $updateNumTracksAfter . ", length=" . $updateLengthAfter . ", releaseYear=" . $updateReleaseYearAfter . " WHERE title='" . $updateTitleBefore . "' and Bname='" . $updateBNameBefore . "'";
-
                 	$r = mysqli_query($connection, $sqlquery);
 
         	?>">
 	<?php
 
-*/
-        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
-        {
 
-
-        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
-        {
-
+        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/ESGroove/updateSongs.php") //if came from updateBands.php
+        { //Songs
+		
 
         }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
-        {
+        { //Members
 
 
         }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
-        {
+        { //Merch
 
 
         }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
-        {
+        { //travelTo
 
 
         }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
-        {
+        { //Facebook
 
 
         }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
-        {
+        { //Instagram
 
 
         }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
-        {
-
-
-        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
-        {
+        { //Twitter
 
 
         }
