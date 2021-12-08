@@ -8,8 +8,8 @@ session_start();
 <?php
 
         $connection=@mysqli_connect('localhost', 'dmcdonald2', 'dmcdonald2', 'ESGrooveDB');
-        $showTableQuery = "select title, Bname, numTracks, length, releaseYear from Album group by title, Bname, numTracks, length, releaseYear;";
-        $updateQuery = "update Bands set";
+        $showTableQuery = "select Atitle, Bname, numTracks, length, releaseYear from Album group by Atitle, Bname, numTracks, length, releaseYear";
+
 ?>
 
 <h style="font-size: 20pt"><b> Update Album Table </b></h><br>
@@ -24,7 +24,7 @@ $r=mysqli_query($connection, $showTableQuery);
 
 
 while($row=mysqli_fetch_array($r)){
-        $title = $row['title'];
+        $title = $row['Atitle'];
         $Bname = $row['Bname'];
         $numTracks = $row['numTracks'];
         $length = $row['length'];
