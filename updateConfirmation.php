@@ -107,7 +107,37 @@
 
         }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/ESGroove/updateSongs.php") //if came from updateBands.php
         { //Songs
-		
+		<?php
+			$updateTitleBefore = $_POST['titleRead'];
+			$updateAtitleBefore = $_POST['AtitleRead'];
+			$updateBnameBefore = $_POST['BnameRead'];
+			$updateLengthBefore = $_POST['lengthRead'];
+
+
+			$updateTitleAfter = $_POST['title'];
+			$updateAtitleAfter = $_POST['Atitle'];
+			$updateBnameAfter = $_POST['Bname'];
+			$updateLengthAfter = $_POST['length'];
+
+			echo "Original Album Title: " . $updateTitleBefore . "<br>Updated Album Title: " . $updateTitleAfter . "<br><br>Original Album Name: " . $updateAtitleBefore . "<br>Updated Album Name: " . $updateAtitleAfter . "<br><br>Original Band Name: " . $updateBnameBefore . "<br>Updated Band Name: " . $updateBnameAfter . "<br><br>Original Song Length: " . $updateLengthBefore . "<br>Updated Song Length: " . $updateLengthAfter . "<br><br>Click 'OK' to make changes, or 'Cancel' to Cancel.";
+        	?>
+        	<br><br>
+
+        	<input type="button" value="Cancel" onclick="history.back()">
+        	<input type="button" value="OK" onclick="
+        	<?php
+
+                	$sqlquery = "update Songs set title='" . $updateTitleAfter . "', Atitle='" . $updateAtitleAfter . "', Bname=" . $updateBname . "', length=" . $updateLengthAfter . " WHERE Atitle='" . $updateTitleBefore . "' and Atitle='" . $updateAtitleBefore . "'";
+
+                	$r = mysqli_query($connection, $sqlquery);
+
+
+        	?>">
+	<?php
+
+
+	?>
+
 
         }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
         { //Members

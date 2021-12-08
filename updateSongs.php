@@ -71,24 +71,24 @@ while($row=mysqli_fetch_array($r)){
 <u><h><b> Update Values: </h></b></u><br>
 
 
-<input type="text" id="titleBox" name="title" size="50" readonly="readonly">
+<input type="text" id="titleBox" name="title" size="50">
 <label for="titleRead">Song Title</label>
 
 <br>
 
-<input type="text" id="AtitleBox" name="Atitle" size="50" readonly="readonly">
+<input type="text" id="AtitleBox" name="Atitle" size="50">
 <label for="AtitleRead">Genre</label>
 
 <br>
 
 
-<input type="text" id="BnameBox" name="Bname" size="50" readonly="readonly">
+<input type="text" id="BnameBox" name="Bname" size="50">
 <label for="BnameRead">Band Name</label>
 
 <br>
 
 
-<input type="text" id="lengthBox" name="length" size="3" readonly="readonly">
+<input type="text" id="lengthBox" name="length" size="3">
 <label for="lengthRead">Length</label>
 
 <br><br>
