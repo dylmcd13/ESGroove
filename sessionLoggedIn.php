@@ -25,11 +25,11 @@ echo "Invalid Login Credentials. Please try again.";
 } else {
 header("location: Login.php");
 }
-if (isset($_SESSION['email'])) {
-$username = $_SESSION['email'];
-header("location: AdminMenu.php");
-} else {
-header("location: Login.php");
-}
+//if (isset($_SESSION['email'])) {
+//$username = $_SESSION['email'];
+//header("location: AdminMenu.php");
+//} else {
+//header("location: Login.php");
+//}
 ?>
 
