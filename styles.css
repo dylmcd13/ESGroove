@@ -169,7 +169,7 @@ body {
   background-color: white;
   opacity: 75%;
   position: absolute;
-  top: 80px;
+  top: 40px;
   left: 75;
   font-size: 24px;
   right: 900;
@@ -177,6 +177,7 @@ body {
   font-style: normal;
   text-align: center;
   width: 300px;
+  bottom: 10px;
 }
 #headerLogo{ color:  #ffffff;
              font-size: 30px;
