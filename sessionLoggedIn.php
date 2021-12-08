@@ -16,17 +16,20 @@ $count = mysqli_num_rows($result);
 
 // If the posted values are equal to the database values, then session will be created for the user.
 if ($count > 0){
+
 $_SESSION['email'] = $username;
+
 header("location: AdminMenu.php"); //whatever the name of our home page is
+
 }else{
+
 header("location: Login.php");
-if ($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/ESGroove/Login.php")
-{
-echo "Invalid Login Credentials. Please try again.";
-}
+
 // If the login credentials do not match, an error message is shown.
 } else {
+
 header("location: Login.php");
+
 }
 //if (isset($_SESSION['email'])) {
 //$username = $_SESSION['email'];
