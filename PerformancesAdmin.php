@@ -22,7 +22,7 @@
 
 <fieldset id="searchSet">
 <legend id="searchLegend">Search Performances</legend>
-<form> 
+<form action="searchPerformanceAdmin.php" method="post"> 
 <label for="PerformanceSearchFilter" id="searchLabel">Search By...</label>
 <select name="PerformanceSearchFilter" id="PerformanceSearchFilter" placeholder="Search by" >
     <option value="Band">Band</option>
