@@ -1,5 +1,5 @@
 <?php
-if($connection=@mysqli_connect('localhost', 'cnussear1', 'cnussear1', 'ESGrooveDB')){
+if($connection=@mysqli_connect('localhost', 'dmcdonald2', 'dmcdonald2', 'ESGrooveDB')){
         print '<p>Successfully connected to ESGroove DataBase.</p>';
 }
 
