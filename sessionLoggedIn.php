@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-$connection=@mysqli_connect('localhost', 'dmcdonald2', 'dmcdonald2', 'ESGrooveDB'); //connection to ESGroove database
+$connection=@mysqli_connect('localhost', 'dmcondald2', 'dmcdonald2', 'ESGrooveDB'); //connection to ESGroove database
 global $connection; //global connection variable
 if (isset($_POST['email']) && isset($_POST['password'])){
 
@@ -20,16 +20,15 @@ if ($count > 0){
 $_SESSION['email'] = $username;
 
 header("location: AdminMenu.php"); //whatever the name of our home page is
-
 }else{
 
 header("location: Login.php");
 
 // If the login credentials do not match, an error message is shown.
-}  else {
-
-header("location: Login.php");
 }
+}
+
+
 //if (isset($_SESSION['email'])) {
 //$username = $_SESSION['email'];
 //header("location: AdminMenu.php");
