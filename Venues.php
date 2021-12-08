@@ -21,7 +21,7 @@
 
 <fieldset id="searchSet">
  <legend id="searchLegend">Search Venues</legend>
- <form>    
+ <form action="searchVenue.php">    
  <label for="VenueSearchFilter" id="searchLabel">Search By...</label>
  <select name="VenueSearchFilter" id="VenueSearchFilter" placeholder="Search by" >
  <option value="venueName">Venue Name</option>
