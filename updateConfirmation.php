@@ -19,7 +19,7 @@
                 $updateNumMembersAfter = $_POST['numMembers'];
                 $updateYearsActiveAfter = $_POST['yearsActive'];
 
-		echo "Original Band Name: " . $updateNameBefore . "<br>Updated Name: " . $updateNameAfter . "<br><br>Original Genre: " . $updateGenreBefore . "<br>Updated Genre: " . $updateGenreAfter . "<br><br>Original Number of Members: " . $updateNumMembersBefore . "<br>Updated Number of Members: " . $updateNumMembersAfter . "<br><br>Original Years Active: " . $updateYearsActiveBefore . "<br>Updated Years Active: " . $updateYearsActiveAfter . "<br><br>Click OK to make changes, or Cancel to cancel changes.";
+		echo "Original Band Name: " . $updateNameBefore . "<br>Updated Band Name: " . $updateNameAfter . "<br><br>Original Genre: " . $updateGenreBefore . "<br>Updated Genre: " . $updateGenreAfter . "<br><br>Original Number of Members: " . $updateNumMembersBefore . "<br>Updated Number of Members: " . $updateNumMembersAfter . "<br><br>Original Years Active: " . $updateYearsActiveBefore . "<br>Updated Years Active: " . $updateYearsActiveAfter . "<br><br>Click OK to make changes, or Cancel to cancel changes.";
 		//echo "Name:" . $updateNameBefore . "<br>" . $updateGenreBefore . "<br>" . $updateNumMembersBefore . "<br>" . $updateYearsActiveBefore . "<br><br>" . ;
 		?>
 			<br><br>
