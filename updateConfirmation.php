@@ -98,16 +98,19 @@
         	<input type="button" value="OK" onclick="
         	<?php
 
-                	$sqlquery = "update Album set title='" . $updateTitleAfter . "', Bname='" . $updateBNameAfter . "', numTracks=" . $updateNumTracksAfter . ", length=" . $updateLengthAfter . ", releaseYear=" . $updateReleaseYearAfter . " WHERE title='" . $updateTitleBefore . "' and Bname='" . $updateBNameBefore . "'";
+                	$sqlquery = "update Album set Atitle='" . $updateTitleAfter . "', Bname='" . $updateBNameAfter . "', numTracks=" . $updateNumTracksAfter . ", length=" . $updateLengthAfter . ", releaseYear=" . $updateReleaseYearAfter . " WHERE Atitle='" . $updateTitleBefore . "' and Bname='" . $updateBNameBefore . "'";
+
                 	$r = mysqli_query($connection, $sqlquery);
 
         	?>">
 	<?php
+	//echo "<br>" . $sqlquery;
 
-
-        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/ESGroove/updateSongs.php") //if came from updateBands.php
+        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/ESGroove/updateSongs.php") //if came from updateSongs.php
         { //Songs
-		<?php
+
+
+
 			$updateTitleBefore = $_POST['titleRead'];
 			$updateAtitleBefore = $_POST['AtitleRead'];
 			$updateBnameBefore = $_POST['BnameRead'];
@@ -119,15 +122,16 @@
 			$updateBnameAfter = $_POST['Bname'];
 			$updateLengthAfter = $_POST['length'];
 
-			echo "Original Album Title: " . $updateTitleBefore . "<br>Updated Album Title: " . $updateTitleAfter . "<br><br>Original Album Name: " . $updateAtitleBefore . "<br>Updated Album Name: " . $updateAtitleAfter . "<br><br>Original Band Name: " . $updateBnameBefore . "<br>Updated Band Name: " . $updateBnameAfter . "<br><br>Original Song Length: " . $updateLengthBefore . "<br>Updated Song Length: " . $updateLengthAfter . "<br><br>Click 'OK' to make changes, or 'Cancel' to Cancel.";
-        	?>
+			echo "Original Song Name: " . $updateTitleBefore . "<br>Updated Song Name: " . $updateTitleAfter . "<br><br>Original Album Name: " . $updateAtitleBefore . "<br>Updated Album Name: " . $updateAtitleAfter . "<br><br>Original Band Name: " . $updateBnameBefore . "<br>Updated Band Name: " . $updateBnameAfter . "<br><br>Original Song Length: " . $updateLengthBefore . "<br>Updated Song Length: " . $updateLengthAfter . "<br><br>Click 'OK' to make changes, or 'Cancel' to Cancel.";
+
+      	?>
         	<br><br>
 
         	<input type="button" value="Cancel" onclick="history.back()">
         	<input type="button" value="OK" onclick="
         	<?php
 
-                	$sqlquery = "update Songs set title='" . $updateTitleAfter . "', Atitle='" . $updateAtitleAfter . "', Bname=" . $updateBname . "', length=" . $updateLengthAfter . " WHERE Atitle='" . $updateTitleBefore . "' and Atitle='" . $updateAtitleBefore . "'";
+                	$sqlquery = "update Songs set title='" . $updateTitleAfter . "', Atitle='" . $updateAtitleAfter . "', Bname='" . $updateBnameAfter . "', length=" . $updateLengthAfter . " WHERE title='" . $updateTitleBefore . "' and Atitle='" . $updateAtitleBefore . "' and Bname='" . $updateBnameBefore . "'";
 
                 	$r = mysqli_query($connection, $sqlquery);
 
@@ -136,7 +140,7 @@
 	<?php
 
 
-	?>
+
 
 
         }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
