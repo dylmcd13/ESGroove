@@ -19,10 +19,11 @@ if ($count > 0){
 
 $_SESSION['email'] = $username;
 
-header("location: AdminMenu.php"); //whatever the name of our home page is
+header("Location:AdminMenu.php"); //whatever the name of our home page is
+
 }else{
 
-header("location: Login.php");
+header("Location:Login.php");
 
 // If the login credentials do not match, an error message is shown.
 }
