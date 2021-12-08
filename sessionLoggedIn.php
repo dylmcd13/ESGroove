@@ -26,10 +26,9 @@ header("location: AdminMenu.php"); //whatever the name of our home page is
 header("location: Login.php");
 
 // If the login credentials do not match, an error message is shown.
-} else {
+}  else {
 
 header("location: Login.php");
-
 }
 //if (isset($_SESSION['email'])) {
 //$username = $_SESSION['email'];
