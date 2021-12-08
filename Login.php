@@ -23,11 +23,11 @@
     <fieldset id="loginField">
         <legend id="loginLegend">Enter Login Information</legend>
         <form action = "sessionLoggedIn.php" method = "post">
-            <label for="userName" id="textLabel">Username:</label>
-            <input type="text" name="userName" id="userName" placeholder="Enter Username....">
+            <label for="email" id="textLabel">Username:</label>
+            <input type="email" name="email" id="email" placeholder="Enter Username...." required />
             <br> 
-            <label for="passWord" id="textLabel">Password:</label> 
-            <input type="text" name="passWord" id="passWord" placeholder="Enter Password....">
+            <label for="password" id="textLabel">Password:</label> 
+            <input type="password" name="password" id="password" placeholder="Enter Password...." required />
             <br> 
             <input type="submit" name="submit" id="submit">
         </form>
