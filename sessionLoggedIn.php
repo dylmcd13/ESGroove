@@ -19,7 +19,6 @@ if ($count > 0){
 $_SESSION['email'] = $username;
 header("location: AdminMenu.php"); //whatever the name of our home page is
 }else{
-header("location: Login.php");
 // If the login credentials do not match, an error message will be shown.
 echo "Invalid Login Credentials. Please try again.";
 }
