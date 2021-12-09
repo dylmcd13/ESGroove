@@ -37,6 +37,7 @@ include "checkSession.php";
 	<option value=""selected>--Select--</option>
   	<option value="updateBands.php">Bands</option>
   	<option value="updateVenue.php">Venues</option>
+	<option value="updatePerformances.php">Performances</option>
   	<option value="updateAlbums.php">Albums</option>
   	<option value="updateSongs.php">Songs</option>
   	<option value="updateMembers.php">Members</option>

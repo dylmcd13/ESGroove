@@ -342,12 +342,46 @@
         ?>">
 
 <?php
+        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/ESGroove/updatePerformances.php")
+        { //Performances
+                $updateBnameBefore = $_POST['BnameRead'];
+                $updateDateBefore = $_POST['dateRead'];
+                $updateVenueBefore = $_POST['venueRead'];
+
+
+                $updateBnameAfter = $_POST['Bname'];
+                $updateDateAfter = $_POST['date'];
+                $updateVenueAfter = $_POST['venue'];
+
+
+                echo "Original Band Name: " . $updateBnameBefore . "<br>Updated Band Name: " . $updateBnameAfter . "<br><br>Original Date: " . $updateDateBefore . "<br>Updated Date: " . $updateDateAfter . "<br><br>Original Venue: " . $updateVenueBefore . "<br>Updated Venue: " . $updateVenueAfter  . "<br><br>Click 'OK' to make changes, or 'Cancel' to Cancel.";
+
+                //echo "Name:" . $updateNameBefore . "<br>" . $updateGenreBefore . "<br>" . $updateNumMe$
+                ?>
+                        <br><br>
+
+                        <input type="button" value="Cancel" onclick="history.back()">
+                        <input type="button" value="OK" onclick="
+                        <?php
+
+                                $sqlquery = "update Performances set Bname='" . $updateBnameAfter . "', date='" . $updateDateAfter . "', venue='" . $updateVenueAfter  . "' WHERE Bname='" . $updateBnameBefore . "' and venue='" . $updateVenueBefore . "'";
+
+
+                                $r = mysqli_query($connection, $sqlquery);
+
+
+                        ?>">
+                <?php
+
+	
+
         }
 
 
 
 
-//echo $sqlquery;
+
+echo "<br>".$sqlquery;
 
 
 
