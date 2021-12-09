@@ -1,5 +1,4 @@
 <?php include 'checkSession.php';?>
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <h style="font-size: 20pt"><b> Delete Table </b></h>
