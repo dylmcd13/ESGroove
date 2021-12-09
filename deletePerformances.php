@@ -19,32 +19,53 @@
 </div>
 
 
-<h style="font-size: 20pt"><b> Delete Table </b></h>
+<?php $connection=@mysqli_connect('localhost', 'dmcdonald2', 'dmcdonald2',
+	'ESGrooveDB'); $query="select * from Bands"; ?>
 
 
-<br>
-<br>
-
-<label for="Table">Choose a Table:</label>
-
-
-
-<select name="table" id="table" onchange="javascript:location.href = this.value;">
-	<option value=""selected>--Select--</option>
-  	<option value="deleteBands1.php">Bands</option>
-  	<option value="deleteVenue1.php">Venues</option>
-  	<option value="deleteAlbum1.php">Albums</option>
-  	<option value="deleteSongs1.php">Songs</option>
-  	<option value="deleteMembers1.php">Members</option>
-  	<option value="deleteMerch1.php">Merch</option>
-  	<option value="deleteTravel1.php">Travelto</option>
-  	<option value="deleteFacebook1.php">Facebook</option>
- 	<option value="deleteInstagram1.php">Instagram</option>
-  	<option value="deleteTwitter1.php">Twitter</option>
-	<option vlaue=<"deletePerformances.php">Performances</option>
-</select>
+<?php
+	echo '<form action="" method="post">';
+	$r=mysqli_query($connection, $query);
+		echo "<table border = '1'>
+		<thead>
+		<tr>
+		<th> Band Name </th>
+		<th> Date</th>
+		<th> Venue </th>
+		<th> Action </th>
+		</tr>
+		</thead>";
 
 
+while($row=mysqli_fetch_array($r)){
+	echo "<tr>";
+	echo "<td>" .  $row['Bname'] .  "</td>";
+	echo "<td>" .  $row['date'] .  "</td>";
+	echo "<td>" .  $row['venue'] . "</td>";
+	echo '<td><input type="hidden" name ="BandN" value = "'.$row['Bname'].'">';
+	echo '<button type="submit" name = "deleteItem" value ="'.$row['venue'].'" />Delete</button></td>';
+
+	echo "</tr>";
+}
+	echo "</table>";
+	echo '</form>';
+
+?>
+
+
+<?php
+if(isset($_POST['deleteItem']) and isset($_POST['BandN']))
+{
+
+$delete=$_POST['deleteItem'];
+$delete2=$_POST['BandN'];
+$sql9="DELETE FROM Performances WHERE venue = '$delete' AND Bname = '$delete2'";
+
+$Q9=mysqli_query($connection, $sql9);
+
+
+}
+?>
 
 </body>
 <footer class="footer-distributed">

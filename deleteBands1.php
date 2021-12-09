@@ -67,6 +67,7 @@ $sql5="DELETE FROM Instagram WHERE Bname = '$delete'";
 $sql6="DELETE FROM Members WHERE Bname = '$delete'";
 $sql7="DELETE FROM Merch WHERE Bname = '$delete'";
 $sql8="DELETE FROM Travelto WHERE Bname = '$delete'";
+$sql0="DELETE FROM Performances WHERE Bname = '$delete'";
 $sql9="DELETE FROM Bands WHERE name = '$delete'";
 
 $Q1=mysqli_query($connection, $sql1);
@@ -77,6 +78,7 @@ $Q5=mysqli_query($connection, $sql5);
 $Q6=mysqli_query($connection, $sql6);
 $Q7=mysqli_query($connection, $sql7);
 $Q8=mysqli_query($connection, $sql8);
+$Q0=mysqli_query($connection, $sql0);
 $Q9=mysqli_query($connection, $sql9);
 
 
