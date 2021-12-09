@@ -4,16 +4,14 @@ session_start();
 <!DOCTYPE html>
 <html>
 
-
 <?php
-
         $connection=@mysqli_connect('localhost', 'dmcdonald2', 'dmcdonald2', 'ESGrooveDB');
-        $showTableQuery = "select name, instrument, Bname from Members group by name, Bname, instrument;";
-        $updateQuery = "update Bands set";
+        $showTableQuery = "select * from Members;";
+
 ?>
 
 <h style="font-size: 20pt"><b> Update Members Table </b></h><br>
-<p> <u>Choose the row you want to edit. <b>Sorted by Member Name</b>.</u> </p>
+<p> <u>Choose the row you want to edit. Sorted by Member Name.</u> </p>
 
 
 
@@ -26,51 +24,78 @@ session_start();
 $r=mysqli_query($connection, $showTableQuery);
 
 
+
 while($row=mysqli_fetch_array($r)){
         $name = $row['name'];
         $instrument = $row['instrument'];
         $Bname = $row['Bname'];
 
-        echo '<option data-name="'.$name.'" data-instrument="'.$instrument.'" data-Bname="'.$Bname.'" . "> ' . $name  . ' || ' . $instrument . ' || ' . $Bname . '</option>';
 
+
+        echo '<option data-name="'.$name.'" data-instrument="'.$instrument.'" data-Bname="'.$Bname.'"> ' . $name  . ' || ' . $instrument . ' || ' . $Bname . ' || ' . '</option>';
 }
 
-
+        mysqli_close($connection);
 ?>
-
 </select>
 
+<br>
+<br>
+
+<form action="updateConfirmation.php" method="post">
+
+<input type="text" id="nameBoxRead" name="nameRead" size="50" readonly="readonly">
+<label for="nameRead">Member Name</label>
+
+<br>
+
+<input type="text" id="instrumentBoxRead" name="instrumentRead" size="50" readonly="readonly">
+<label for="instrumentRead">Instrument</label>
+
+<br>
+
+
+<input type="text" id="BnameBoxRead" name="BnameRead" size="30" readonly="readonly">
+<label for="BnameRead">Band Name</label>
+
+
+<br><br><br><br><br>
+
+<u><h><b> Update Values: </h></b></u><br>
+
+
+<input type="text" id="nameBox" name="name" size="50">
+<label for="nameRead">Member Name</label>
+
+<br>
+
+<input type="text" id="instrumentBox" name="instrument" size="50">
+<label for="instrument">Instrument</label>
+
+<br>
+
+
+<input type="text" id="BnameBox" name="Bname" size="30">
+<label for="Bname">Band Name</label>
+
 <br><br>
-<form>
-<input type="text" id="nameBox" title="nameBox" size="50">
-<label for="nameBox">Name</label>
 
-<br>
-
-
-<input type="text" id="instrumentBox" title="instrumentBox" size="50">
-<label for="instrumentBox">Instrument</label>
-
-<br>
-
-
-<input type="text" id="BnameBox" title="BnameBox" size="50">
-<label for="BnameBox">Band Name</label>
-
-<br>
-
-
-
-
-
-<br>
-<input type="submit" action="updateQuery()" value="Update">
+<input type="submit" value="Update">
 
 </form>
+
+
+<br><br><br><br>
+
+
 <br>
+
+
+<p id="o"></p>
 
 <script>
 
+//Insert into text boxes
 function insert()
 {
 
@@ -78,17 +103,16 @@ function insert()
         var selectedOption = selectTable.options[selectTable.selectedIndex];
 
 
+        document.getElementById('nameBoxRead').value = selectedOption.getAttribute('data-name');
+        document.getElementById('instrumentBoxRead').value = selectedOption.getAttribute('data-instrument');
+        document.getElementById('BnameBoxRead').value = selectedOption.getAttribute('data-Bname');
+
         document.getElementById('nameBox').value = selectedOption.getAttribute('data-name');
         document.getElementById('instrumentBox').value = selectedOption.getAttribute('data-instrument');
         document.getElementById('BnameBox').value = selectedOption.getAttribute('data-Bname');
-        document.getElementById('lengthBox').value = selectedOption.getAttribute('data-length');
 
-        $updateQuery += " title=". selectedOption.getAttribute('data-title')
-        document.getElementById('o').innerHTML = $updateQuery;
 
 }
-
-
 </script>
 
 
