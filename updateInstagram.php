@@ -3,13 +3,11 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html>
-
-
 <?php
 
         $connection=@mysqli_connect('localhost', 'dmcdonald2', 'dmcdonald2', 'ESGrooveDB');
         $showTableQuery = "select Bname, handle from Instagram group by Bname, handle;";
-        $updateQuery = "update Bands set";
+
 ?>
 
 <h style="font-size: 20pt"><b> Update Instagram Table </b></h><br>
@@ -40,18 +38,28 @@ while($row=mysqli_fetch_array($r)){
 </select>
 
 <br><br>
-<form>
-<input type="text" id="BnameBox" title="BnameBox" size="50">
+<form action="updateConfirmation.php" method="post">
+
+<input type="text" id="BnameBoxRead" name="BnameRead" size="50" readonly="readonly">
+<label for="BnameBoxRead">Band Name</label>
+
+<br>
+
+
+<input type="text" id="handleBoxRead" name="handleRead" size="50" readonly="readonly">
+<label for="handleBoxRead">URL</label>
+
+<br><br><br>
+<u><h><b> Update Values: </h></b></u><br>
+
+<input type="text" id="BnameBox" name="Bname" size="50">
 <label for="BnameBox">Band Name</label>
 
 <br>
 
 
-<input type="text" id="handleBox" title="handleBox" size="50">
-<label for="handleBox">handle</label>
-
-<br>
-
+<input type="text" id="handleBox" name="handle" size="50">
+<label for="handleBox">URL</label>
 
 
 
@@ -62,7 +70,7 @@ while($row=mysqli_fetch_array($r)){
 
 
 <br>
-<input type="submit" action="updateQuery()" value="Update">
+<input type="submit" value="Update">
 
 </form>
 <br>
@@ -72,17 +80,16 @@ while($row=mysqli_fetch_array($r)){
 function insert()
 {
 
-        var selectTable = document.getElementById('table');
+       var selectTable = document.getElementById('table');
         var selectedOption = selectTable.options[selectTable.selectedIndex];
 
 
+        document.getElementById('BnameBoxRead').value = selectedOption.getAttribute('data-Bname');
+        document.getElementById('handleBoxRead').value = selectedOption.getAttribute('data-handle');
+
         document.getElementById('BnameBox').value = selectedOption.getAttribute('data-Bname');
         document.getElementById('handleBox').value = selectedOption.getAttribute('data-handle');
-        
-        
 
-        $updateQuery += " title=". selectedOption.getAttribute('data-title')
-        document.getElementById('o').innerHTML = $updateQuery;
 
 }
 

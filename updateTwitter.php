@@ -4,7 +4,6 @@ session_start();
 <!DOCTYPE html>
 <html>
 
-
 <?php
 
         $connection=@mysqli_connect('localhost', 'dmcdonald2', 'dmcdonald2', 'ESGrooveDB');
@@ -40,26 +39,29 @@ while($row=mysqli_fetch_array($r)){
 </select>
 
 <br><br>
-<form>
-<input type="text" id="BnameBox" title="BnameBox" size="50">
-<label for="BnameBox">Band Name</label>
+<form action="updateConfirmation.php" method="post">
+
+<input type="text" id="BnameRead" name="BnameRead" size="50" readonly="readonly">
+<label for="BnameRead">Band Name</label>
 
 <br>
 
+<input type="text" id="handleRead" name="handleRead" size="50" readonly="readonly">
+<label for="handleRead">Twitter Handle</label>
 
-<input type="text" id="handleBox" title="handleBox" size="50">
-<label for="handleBox">Twitter Handle</label>
+<br><br><br>
 
-<br>
-
-
-
+<u><h><b> Update Values: </h></b></u><br>
 
 <br>
 
+<input type="text" id="Bname" name="Bname" size="50">
+<label for="Bname">Band Name</label>
 
+<br>
 
-
+<input type="text" id="handle" name="handle" size="50">
+<label for="handle">Twitter Handle</label>
 
 <br>
 <input type="submit" action="updateQuery()" value="Update">
@@ -71,21 +73,15 @@ while($row=mysqli_fetch_array($r)){
 
 function insert()
 {
-
         var selectTable = document.getElementById('table');
         var selectedOption = selectTable.options[selectTable.selectedIndex];
 
+        document.getElementById('BnameRead').value = selectedOption.getAttribute('data-Bname');
+        document.getElementById('handleRead').value = selectedOption.getAttribute('data-handle');
 
-        document.getElementById('BnameBox').value = selectedOption.getAttribute('data-Bname');
-        document.getElementById('handleBox').value = selectedOption.getAttribute('data-handle');
-        
-        
-
-        $updateQuery += " title=". selectedOption.getAttribute('data-title')
-        document.getElementById('o').innerHTML = $updateQuery;
-
+        document.getElementById('Bname').value = selectedOption.getAttribute('data-Bname');
+        document.getElementById('handle').value = selectedOption.getAttribute('data-handle');
 }
-
 
 </script>
 

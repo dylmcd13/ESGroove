@@ -164,41 +164,166 @@
         <input type="button" value="OK" onclick="
         <?php
 
-                $sqlquery = "update Members set name='" . $updateNameAfter . "', instrument='" . $updateInstrumentAfter . "', Bname='" . $updateBnameAfter . "' WHERE name='" . $updateNameBefore . "' and Bname='" . $updateBnameBefore . "'";
+                $sqlquery = "update Members set name='" . $updateNameAfter . "', instrument='" . $updateInstrumentAfter . "', Bname='" . $updateBnameAfter . "' WHERE name='" . $updateNameBefore . "' and Bname='" . $updateBNameBefore . "'";
 
                 $r = mysqli_query($connection, $sqlquery);
 
 
         ?>">
 	<?php
-		//echo "<br>" . $sqlquery;
+		
 
 
-
-        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
+        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/ESGroove/updateMerch.php") //if came from updateMerch.php
         { //Merch
 
 
-        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
+	$updateBnameBefore = $_POST['BnameRead'];
+        $updateTypeBefore = $_POST['typeRead'];
+        $updatePriceBefore = $_POST['priceRead'];
+
+
+        $updateBnameAfter = $_POST['Bname'];
+        $updateTypeAfter = $_POST['type'];
+        $updatePriceAfter = $_POST['price'];
+
+        echo "Original Band Name: " . $updateBnameBefore . "<br>Updated Band Name: " . $updateBnameAfter . "<br><br>Original Type of Merch: " . $updateTypeBefore . "<br>Updated Type of Merch: " . $updateTypeAfter . "<br><br>Original Price: " . $updatePriceBefore . "<br>Updated Price: " . $updatePriceAfter . "<br><br>Click 'OK' to make changes, or 'Cancel' to Cancel.";
+?>
+        <br><br>
+
+        <input type="button" value="Cancel" onclick="history.back()">
+        <input type="button" value="OK" onclick="
+        <?php
+
+                $sqlquery = "update Merch set Bname='" . $updateBnameAfter . "', type='" . $updateTypeAfter . "', price=" . $updatePriceAfter . " WHERE Bname='" . $updateBnameBefore . "' and type='" . $updateTypeBefore . "'";
+
+                $r = mysqli_query($connection, $sqlquery);
+
+
+        ?>">
+
+
+	<?php
+
+        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/ESGroove/updateTravelto.php") //if came from updateTravelTo.php
         { //travelTo
 
 
-        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
+	$updateAddressBefore = $_POST['addressBoxRead'];
+        $updateBnameBefore = $_POST['BnameBoxRead'];
+
+        $updateAddressAfter = $_POST['address'];
+        $updateBnameAfter = $_POST['Bname'];
+
+        echo "Original Address: " . $updateAddressBefore . "<br>Updated Address: " . $updateAddressAfter . "<br><br>Original Band Name: " . $updateBnameBefore . "<br>Updated Band Name: " . $updateBNameAfter . "<br><br>Click 'OK' to make changes, or 'Cancel' to Cancel.";
+
+	?>
+        <br><br>
+
+        <input type="button" value="Cancel" onclick="history.back()">
+        <input type="button" value="OK" onclick="
+        <?php
+
+                $sqlquery = "update Travelto set address='" . $updateAddressAfter . "', Bname='" . $updateBnameAfter . "' WHERE address='" . $updateAddressBefore . "' and Bname='" . $updateBnameBefore . "'";
+
+                $r = mysqli_query($connection, $sqlquery);
+
+
+        ?>">
+
+	<?php
+
+        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/ESGroove/updateFacebook.php") //if came from updateFacebook.php
         { //Facebook
 
 
-        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
+        	$updateUrlBefore = $_POST['urlRead'];
+       		 $updateBnameBefore = $_POST['BnameRead'];
+
+        	$updateUrlAfter = $_POST['url'];
+        	$updateBnameAfter = $_POST['Bname'];
+
+        	echo "Original URL: " . $updateUrlBefore . "<br>Updated Address: " . $updateUrlAfter . "<br><br>Original Band Name: " . $updateBnameBefore . "<br>Updated Band Name: " . $updateBNameAfter . "<br><br>Click 'OK' to make changes, or 'Cancel' to Cancel.";
+	?>
+        <br><br>
+
+        <input type="button" value="Cancel" onclick="history.back()">
+        <input type="button" value="OK" onclick="
+
+        <?php
+
+                $sqlquery = "update Facebook set Url='" . $updateUrlAfter . "', Bname='" . $updateBnameAfter . "' WHERE Url='" . $updateUrlBefore . "' and Bname='" . $updateBnameBefore . "'";
+
+                $r = mysqli_query($connection, $sqlquery);
+
+
+        ?>">
+
+	<?php
+
+        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/ESGroove/updateInstagram.php") //if came from updateInstagram.php
         { //Instagram
 
+		$updateBnameBefore = $_POST['BnameRead'];
+        	$updateHandleBefore = $_POST['handleRead'];
 
-        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/updateBands.php") //if came from updateBands.php
+        	$updateBnameAfter = $_POST['Bname'];
+        	$updateHandleAfter = $_POST['handle'];
+
+
+        	echo "Original Band Name: " . $updateBnameBefore . "<br>Updated Band Name: " . $updateBnameAfter . "<br><br>Original URL: " . $updateHandleBefore . "<br>Updated URL: " . $updateHandleAfter . "<br><br>Click 'OK' to make changes, or 'Cancel' to Cancel.";
+?>
+        <br><br>
+
+        <input type="button" value="Cancel" onclick="history.back()">
+        <input type="button" value="OK" onclick="
+
+        <?php
+
+                $sqlquery = "update Instagram set Bname='" . $updateBnameAfter . "', handle='" . $updateHandleAfter . "' WHERE Bname='" . $updateBnameBefore . "' and handle='" . $updateHandleBefore . "'";
+                $r = mysqli_query($connection, $sqlquery);
+
+        ?>">
+
+	<?php
+
+        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/ESGroove/updateTwitter.php") //if came from updateTwitter.php
         { //Twitter
 
 
+
+
+        $updateBnameBefore = $_POST['BnameRead'];
+        $updateHandleBefore = $_POST['handleRead'];
+
+
+        $updateBnameAfter = $_POST['Bname'];
+        $updateHandleAfter = $_POST['handle'];
+
+
+        echo "Original Band Name: " . $updateBnameBefore . "<br>Updated Band Name: " . $updateBnameAfter . "<br><br>Original Twitter Handle: " . $updateHandleBefore . "<br>Updated Twitter Handle: " . $updateHandleAfter . "<br><br>Click 'OK' to make changes, or 'Cancel' to Cancel.";
+?>
+        <br><br>
+
+        <input type="button" value="Cancel" onclick="history.back()">
+        <input type="button" value="OK" onclick="
+
+        <?php
+
+                $sqlquery = "update Twitter set handle='" . $updateBnameAfter . "', handle='" . $updateHandleAfter . "' WHERE Bname='" . $updateBnameBefore . "' and handle='" . $updateHandleBefore . "'";
+
+                $r = mysqli_query($connection, $sqlquery);
+
+
+        ?>">
+
+<?php
         }
 
-//echo $sqlquery;
 
+
+
+//echo $sqlquery;
 
 
 

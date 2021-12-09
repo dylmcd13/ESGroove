@@ -9,11 +9,11 @@ session_start();
 
         $connection=@mysqli_connect('localhost', 'dmcdonald2', 'dmcdonald2', 'ESGrooveDB');
         $showTableQuery = "select Bname, address from Travelto group by Bname, address;";
-        $updateQuery = "update Bands set";
+       
 ?>
 
 <h style="font-size: 20pt"><b> Update Travelto Table </b></h><br>
-<p> <u>Choose the row you want to edit. <b>Sorted by Band Name</b>.</u> </p>
+<p> <u>Choose the row you want to edit. <b>Sorted by Band</b>.</u> </p>
 
 
 
@@ -40,29 +40,37 @@ while($row=mysqli_fetch_array($r)){
 </select>
 
 <br><br>
-<form>
-<input type="text" id="BnameBox" title="BnameBox" size="50">
-<label for="BnameBox">Band Name</label>
+<form action="updateConfirmation.php" method="post">
+
+<input type="text" id="BnameBoxRead" name="BnameBoxRead" size="50" readonly="readonly">
+<label for="BnameBoxRead">Band Name</label>
 
 <br>
 
 
-<input type="text" id="address" title="address" size="50">
-<label for="address">Address of Venue</label>
-
-<br>
-
-
-
+<input type="text" id="addressBoxRead" name="addressBoxRead" size="50" readonly="readonly">
+<label for="addressBoxRead">Address of Venue</label>
 
 <br>
 
 
 
 
+<br><br><br>
+
+<u><h><b> Update Values: </h></b></u><br>
+
+
+<input type="text" id="BnameBox" name="Bname" size="50">
+<label for="BnameRead">Band Name</label>
 
 <br>
-<input type="submit" action="updateQuery()" value="Update">
+
+<input type="text" id="addressBox" name="address" size="50">
+<label for="type">Type of Merch</label>
+
+<br><br>
+<input type="submit" value="Update">
 
 </form>
 <br>
@@ -76,13 +84,11 @@ function insert()
         var selectedOption = selectTable.options[selectTable.selectedIndex];
 
 
-        document.getElementById('BnameBox').value = selectedOption.getAttribute('data-Bname');
-        document.getElementById('address').value = selectedOption.getAttribute('data-address');
-        
-        
+        document.getElementById('BnameBoxRead').value = selectedOption.getAttribute('data-Bname');
+        document.getElementById('addressBoxRead').value = selectedOption.getAttribute('data-address');
 
-        $updateQuery += " title=". selectedOption.getAttribute('data-title')
-        document.getElementById('o').innerHTML = $updateQuery;
+        document.getElementById('BnameBox').value = selectedOption.getAttribute('data-Bname');
+        document.getElementById('addressBox').value = selectedOption.getAttribute('data-address');
 
 }
 

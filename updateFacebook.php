@@ -40,30 +40,42 @@ while($row=mysqli_fetch_array($r)){
 </select>
 
 <br><br>
-<form>
-<input type="text" id="BnameBox" title="BnameBox" size="50">
+<form action="updateConfirmation.php" method="post">
+
+<input type="text" id="BnameBoxRead" name="BnameRead" size="50" readonly="readonly">
+<label for="BnameBoxRead">Band Name</label>
+
+<br>
+
+
+<input type="text" id="urlBoxRead" name="urlRead" size="50" readonly="readonly">
+<label for="urlBoxRead">URL</label>
+
+<br>
+
+
+
+
+<br>
+
+
+
+
+
+<u><h><b> Update Values: </h></b></u><br>
+
+
+<input type="text" id="BnameBox" name="Bname" size="50">
 <label for="BnameBox">Band Name</label>
 
 <br>
 
 
-<input type="text" id="urlBox" title="urlBox" size="50">
-<label for="url">URL</label>
+<input type="text" id="urlBox" name="url" size="50">
+<label for="urlBox">URL</label>
 
-<br>
-
-
-
-
-<br>
-
-
-
-
-
-<br>
-<input type="submit" action="updateQuery()" value="Update">
-
+<br><br>
+<input type="submit" value="Update">
 </form>
 <br>
 
@@ -76,13 +88,11 @@ function insert()
         var selectedOption = selectTable.options[selectTable.selectedIndex];
 
 
+        document.getElementById('BnameBoxRead').value = selectedOption.getAttribute('data-Bname');
+        document.getElementById('urlBoxRead').value = selectedOption.getAttribute('data-url');
+
         document.getElementById('BnameBox').value = selectedOption.getAttribute('data-Bname');
         document.getElementById('urlBox').value = selectedOption.getAttribute('data-url');
-        
-        
-
-        $updateQuery += " title=". selectedOption.getAttribute('data-title')
-        document.getElementById('o').innerHTML = $updateQuery;
 
 }
 
