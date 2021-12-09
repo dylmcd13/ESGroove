@@ -1,0 +1,129 @@
+<html>
+<head>
+    <link href="styles.css" rel="stylesheet">
+
+</head>
+<body>
+    <a name="top"></a>
+<div>
+    <ul id="navbar">
+  <li id="navtab"><a   id="navlink" href="indexAdmin.php">Home</a></li>
+  <li id="navtab"><a  id="navlink" href="ArtistsAdmin.php">Artists</a></li>
+  <li id="navtab"><a  id="navlink" href="VenuesAdmin.php">Venues</a></li>
+  <li id="navtab"><a  id="navlink" href="PerformancesAdmin.php">Performances</a></li>
+  <li id="navtab"><a  id="navlink" href="AdminMenu.php">Admin Menu</a></li>
+  <li id="navtab"><a  id="navlink" href="Logout.php">Logout</a></li>
+  <li id="headerLogo">ES<span id="headerSpan">Groove</span></li>
+</ul>
+<hr style="height: 15px; background-color: #444; border-color: #444; margin: 0; padding: 0;">
+</div>
+
+
+<footer class="footer-distributed">
+
+            <div class="footer-left">
+
+                <h3>ES<span>Groove</span></h3>
+
+                <p class="footer-links">
+                   <a id="footerLink" href="indexAdmin.php">Home</a>
+
+                    <a id="footerLink" href="ArtistsAdmin.php">Artists</a>
+
+                    <a id="footerLink" href="VenuesAdmin.php">Venues</a>
+
+                    <a id="footerLink" href="PerformancesAdmin.php">Performances</a>
+
+                    <a id="footerLink" href="AdminMenu.php">Admin Menu</a>
+
+                    <a id="footerLink" href="Logout.php">Logout</a>
+
+                    <a href="#top">Back to top of page</a>
+                </p>
+
+                <p class="footer-company-name">ESGroove © 2021</p>
+
+            </div>
+        </footer>
+<html>
+<body>
+<form>
+        <form action = 'insertBandTemplate.php' method ='post'>
+Band Name:
+<input type = 'text' name = 'bandName' id = bandName>
+Bands Genre:
+<input type = 'text' name = 'bandGenre' id = bandGenre>
+Number of Members:
+<input type = 'text' name = 'bandNumMembers' id = bandNumMembers>
+Number of Years Active:
+<input type = 'text' name = 'bandYearsActive' id = bandYearsActive>
+
+<br>
+<br>
+
+Song Title:
+<input type = 'text' name = 'songTitle' id = songtitle>
+Album of Song:
+<input type = 'text' name = 'songAlbum' id = songAlbum>
+Band Name:
+<input type = 'text' name = 'songBname' id = songBname>
+Song Length:
+<input type = 'text' name = 'songLength' id = songLength>
+
+<br>
+<br>
+
+Album Title:
+<input type = 'text' name = 'albumTitle' id = albumTitle>
+Band Name:
+<input type = 'text' name = 'albumBname' id = albumBname>
+Number of Tracks in Album:
+<input type = 'text' name = 'albumNumTracks' id = albumNumTracks>
+Album Length:
+<input type = 'text' name = 'albumLength' id = albumLength>
+Release Year of Album:
+<input type = 'text' name = 'albumReleaseYear' id = albumReleaseYear>
+<br>
+<input type = "Submit" value = "Submit">
+
+<?php
+include 'checkSession.php';
+$connection = @mysqli_connect('localhost', 'dmcdonald2', 'dmcdonald2', 'ESGrooveDB');
+
+
+$bandName = $_POST['bandName'];
+$bandGenre = $_POST['bandGenre'];
+$bandNumMembers = $_POST['bandNumMembers'];
+$bandYearsActive = $_POST['bandYearsActive'];
+
+$songTitle = $_POST['songTitle'];
+$songBname = $_POST['songBname'];
+$songAlbum = $_POST['songAlbum'];
+$songLength = $_POST['songLength'];
+
+$albumTitle = $_POST['albumTitle'];
+$albumBname = $_POST['albumBname'];
+$albumNumTracks = $_POST['albumNumTracks'];
+$albumLength = $_POST['albumLength'];
+$albumReleaseYear = $_POST['albumReleaseYear'];
+
+$sqlquery1 = "INSERT INTO Bands VALUES ('$bandName', '$bandGenre', $bandNumMembers, $bandYearsActive)";
+$sqlquery3 = "INSERT INTO Album VALUES ('$albumTitle', '$albumBname' , $albumNumTracks, $albumLength, $albumReleaseYear)";
+$sqlquery2 = "INSERT INTO Songs VALUES ('$songTitle', '$songBname', '$songAlbum', $songLength)";
+
+$rs = mysqli_query($connection, $sqlquery1);
+$rs1 = mysqli_query($connection, $sqlquery3);
+$rs2 = mysqli_query($connection, $sqlquery2);
+
+if(mysqli_affected_rows($rs) == 1){
+        echo "Record inserted succesfully";
+}
+
+
+mysqli_close($connection);
+
+?>
+
+</form>
+</body>
+</html>
