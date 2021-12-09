@@ -33,7 +33,7 @@ $query1="select Bands.name, genre, numMembers, yearsActive, Members.name, instru
         join Facebook on Bands.name = Facebook.Bname
         join Instagram on Bands.name = Instagram.Bname
         join Twitter on Bands.name = Twitter.Bname
-        join Merch on Bands.name = Merch.Bname;
+        join Merch on Bands.name = Merch.Bname
         and 
         ";
 

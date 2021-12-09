@@ -15,6 +15,8 @@
 </ul>
 
 </div>
+<br>
+<br>
 <?php
 $connection=@mysqli_connect('localhost', 'dmcdonald2', 'dmcdonald2', 'ESGrooveDB');   
 
@@ -28,11 +30,10 @@ $query1="select Bands.name, genre, numMembers, yearsActive, Members.name, instru
         join Facebook on Bands.name = Facebook.Bname
         join Instagram on Bands.name = Instagram.Bname
         join Twitter on Bands.name = Twitter.Bname
-        join Merch on Bands.name = Merch.Bname;
-        and 
-        ";
+        join Merch on Bands.name = Merch.Bname
+        and ";
 
-if($_POST['BandSearchFilter'] =="bandName") {
+if($_POST['BandSearchFilter'] == "bandName") {
 
          $query1 .= " Bands.name like '%$artistName%'";
 
