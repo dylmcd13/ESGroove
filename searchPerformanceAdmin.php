@@ -1,3 +1,4 @@
+<?php include "checkSession.php"; ?>
 <html>
 <head>
     <link href="styles.css" rel="stylesheet">
@@ -24,7 +25,7 @@ $query3 = "SELECT  * FROM Performances WHERE";
 
 if($_POST['PerformanceSearchFilter'] =="Band") {
 
-          $query3 .= " name like'%$performance%'";
+          $query3 .= " Bname like'%$performance%'";
 
         }
 
@@ -51,7 +52,7 @@ echo "<table border='1'>
 
 while($row2=mysqli_fetch_array($s)){
 echo "<tr>";
-echo "<td>" . $row2['name'] . "</td>";
+echo "<td>" . $row2['Bname'] . "</td>";
 echo "<td>" . $row2['date'] . "</td>";
 echo "<td>" . $row2['venue'] . "</td>";
 
