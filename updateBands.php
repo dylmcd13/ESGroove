@@ -36,8 +36,8 @@ include "checkSession.php";
 
 ?>
 
-<h style="font-size: 20pt"><b> Update Bands Table </b></h><br>
-<p> <u>Choose the row you want to edit. Sorted by name.</u> </p>
+<h style="font-size: 20pt; color: white"><b> Update Bands Table </b></h><br>
+<p style="color: white"> <u>Choose the row you want to edit. Sorted by name.</u> </p>
 
 
 
@@ -68,7 +68,7 @@ while($row=mysqli_fetch_array($r)){
 <br>
 <br>
 
-<form action="updateConfirmation.php" method="post">
+<form  style="color: white" action="updateConfirmation.php" method="post">
 <input type="text" id="nameBoxRead" name="nameRead" size="50" readonly="readonly">
 <label for="nameRead">Band Name</label>
 
@@ -91,7 +91,7 @@ while($row=mysqli_fetch_array($r)){
 
 <br><br><br><br><br>
 
-<u><h><b> Update Values: </h></b></u><br>
+<u><h style="color: white"><b> Update Values: </h></b></u><br>
 
 
 <input type="text" id="nameBox" name="name" size="50">
