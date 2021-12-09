@@ -381,7 +381,7 @@
 
 
 
-echo "<br>".$sqlquery;
+//echo "<br>".$sqlquery;
 
 
 
