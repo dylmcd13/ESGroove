@@ -1,5 +1,5 @@
 <?php 
-include 'checkSession.php'
+include 'checkSession.php';
 ?>
 <html>
 <head>

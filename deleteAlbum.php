@@ -1,5 +1,4 @@
 <?php include 'checkSession.php'; ?>
-<?php session_start(); ?>
 
 
 
