@@ -91,7 +91,7 @@ if($_POST['BandSearchFilter'] =="Stitle") {
 
 
 $r=mysqli_query($connection, $query1);
-echo "<table border='1' style='color:white; width:100% ''>
+echo "<table border='1' style='color:white; width:100%; table-layout:auto; font-size=12px; ''>
 <thead>
 <tr>
 <th> Band name </th>
