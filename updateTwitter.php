@@ -7,7 +7,7 @@ include "checkSession.php";
 <head>
 	<link href="styles.css" rel="stylesheet">
 </head>
-<body>
+<body style="color: white">
     <a name="top"></a>
 <div>
 	<ul id="navbar">
