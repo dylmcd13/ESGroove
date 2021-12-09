@@ -1,6 +1,4 @@
-<?php 
-include 'checkSession.php';
-?>
+<?php include 'checkSession.php'; ?>
 <html>
 <head>
 	<link href="styles.css" rel="stylesheet">
@@ -19,33 +17,32 @@ include 'checkSession.php';
 </ul>
 <hr style="height: 15px; background-color: #444; border-color: #444; margin: 0; padding: 0;">
 </div>
+
+
+<h style="font-size: 20pt"><b> Delete Table </b></h>
+
+
 <br>
-<h1 id="title">Search the <span id="headerSpan">Database By Venue</span></h1>
-<hr style="height:5px; background-color:white; border-color: white;">
-
-<fieldset id="searchSet">
- <legend id="searchLegend">Search Venues</legend>
- <form action="searchVenueAdmin.php" method = "post">    
- <label for="VenueSearchFilter" id="searchLabel">Search By...</label>
- <select name="VenueSearchFilter" id="VenueSearchFilter" placeholder="Search by" >
- <option value="venueName">Venue Name</option>
- <option value="established">Established Year</option>
- <option value="type">Type of Venue</option>
- <option value="address">Address of Venue</option>
- </select>
 <br>
-<input type="text" id = "venue"  name ="venue">
-<br>
-<input type="submit" id="submit" >
-</form>
- </fieldset>
+
+<label for="Table">Choose a Table:</label>
 
 
 
-
-
-
-
+<select name="table" id="table" onchange="javascript:location.href = this.value;">
+	<option value=""selected>--Select--</option>
+  	<option value="deleteBands1.php">Bands</option>
+  	<option value="deleteVenue1.php">Venues</option>
+  	<option value="deleteAlbum1.php">Albums</option>
+  	<option value="deleteSongs1.php">Songs</option>
+  	<option value="deleteMembers1.php">Members</option>
+  	<option value="deleteMerch1.php">Merch</option>
+  	<option value="deleteTravel1.php">Travelto</option>
+  	<option value="deleteFacebook1.php">Facebook</option>
+ 	<option value="deleteInstagram1.php">Instagram</option>
+  	<option value="deleteTwitter1.php">Twitter</option>
+	<option vlaue=<"deletePerformances.php">Performances</option>
+</select>
 
 
 

@@ -1,3 +1,27 @@
+<?php include "checkSession.php"; ?>
+<html>
+<head>
+	<link href="styles.css" rel="stylesheet">
+</head>
+<body style="color: white">
+    <a name="top"></a>
+<div>
+	<ul id="navbar">
+  <li id="navtab"><a   id="navlink" href="indexAdmin.php">Home</a></li>
+  <li id="navtab"><a  id="navlink" href="ArtistsAdmin.php">Artists</a></li>
+  <li id="navtab"><a  id="navlink" href="VenuesAdmin.php">Venues</a></li>
+  <li id="navtab"><a  id="navlink" href="PerformancesAdmin.php">Performances</a></li>
+  <li id="navtab"><a  id="navlink" href="AdminMenu.php">Admin Menu</a></li>
+  <li id="navtab"><a  id="navlink" href="Logout.php">Logout</a></li>
+  <li id="headerLogo">ES<span id="headerSpan">Groove</span></li>
+</ul>
+<hr style="height: 15px; background-color: #444; border-color: #444; margin: 0; padding: 0;">
+</div>
+
+
+
+
+
 <h> You Are Changing: </h><br><br>
 
 
@@ -318,13 +342,72 @@
         ?>">
 
 <?php
+        }else if($_SERVER['HTTP_REFERER'] == "https://lamp.salisbury.edu/~dmcdonald2/ESGroove/updatePerformances.php")
+        { //Performances
+                $updateBnameBefore = $_POST['BnameRead'];
+                $updateDateBefore = $_POST['dateRead'];
+                $updateVenueBefore = $_POST['venueRead'];
+
+
+                $updateBnameAfter = $_POST['Bname'];
+                $updateDateAfter = $_POST['date'];
+                $updateVenueAfter = $_POST['venue'];
+
+
+                echo "Original Band Name: " . $updateBnameBefore . "<br>Updated Band Name: " . $updateBnameAfter . "<br><br>Original Date: " . $updateDateBefore . "<br>Updated Date: " . $updateDateAfter . "<br><br>Original Venue: " . $updateVenueBefore . "<br>Updated Venue: " . $updateVenueAfter  . "<br><br>Click 'OK' to make changes, or 'Cancel' to Cancel.";
+
+                //echo "Name:" . $updateNameBefore . "<br>" . $updateGenreBefore . "<br>" . $updateNumMe$
+                ?>
+                        <br><br>
+
+                        <input type="button" value="Cancel" onclick="history.back()">
+                        <input type="button" value="OK" onclick="
+                        <?php
+
+                                $sqlquery = "update Performances set Bname='" . $updateBnameAfter . "', date='" . $updateDateAfter . "', venue='" . $updateVenueAfter  . "' WHERE Bname='" . $updateBnameBefore . "' and venue='" . $updateVenueBefore . "'";
+
+
+                                $r = mysqli_query($connection, $sqlquery);
+
+
+                        ?>">
+                <?php
+
+	
+
         }
 
 
 
 
-//echo $sqlquery;
+
+//echo "<br>".$sqlquery;
 
 
 
 ?>
+
+
+</body>
+<footer class="footer-distributed">
+            <div class="footer-left">
+                <h3>ES<span>Groove</span></h3>
+                <p class="footer-links">
+                   <a id="footerLink" href="indexAdmin.php">Home</a>
+                    
+                    <a id="footerLink" href="ArtistsAdmin.php">Artists</a>
+                    
+                    <a id="footerLink" href="VenuesAdmin.php">Venues</a>
+                    
+                    <a id="footerLink" href="PerformancesAdmin.php">Performances</a>
+                    
+                    <a id="footerLink" href="AdminMenu.php">Admin Menu</a>
+                    <a id="footerLink" href="Logout.php">Logout</a>
+                    
+                    <a href="#top">Back to top of page</a>
+                </p>
+                <p class="footer-company-name">ESGroove © 2021</p>
+            </div>
+        </footer>
+       
+</html>

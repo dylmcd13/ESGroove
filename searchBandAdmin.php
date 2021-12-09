@@ -1,22 +1,25 @@
+<?php 
+include 'checkSession.php';
+?>
 <html>
 <head>
         <link href="styles.css" rel="stylesheet">
+   
 </head>
 <body>
     <a name="top"></a>
 <div>
         <ul id="navbar">
-  <li id="navtab"><a   id="navlink" href="index.php">Home</a></li>
-  <li id="navtab"><a  id="navlink" href="Artists.php">Artists</a></li>
-  <li id="navtab"><a  id="navlink" href="Venues.php">Venues</a></li>
-  <li id="navtab"><a  id="navlink" href="Performances.php">Performances</a></li>
-  <li id="navtab"><a  id="navlink" href="Login.php">Login</a></li>
+  <li id="navtab"><a   id="navlink" href="indexAdmin.php">Home</a></li>
+  <li id="navtab"><a  id="navlink" href="ArtistsAdmin.php">Artists</a></li>
+  <li id="navtab"><a  id="navlink" href="VenuesAdmin.php">Venues</a></li>
+  <li id="navtab"><a  id="navlink" href="PerformancesAdmin.php">Performances</a></li>
+  <li id="navtab"><a  id="navlink" href="AdminMenu.php">Admin Menu</a></li>
+  <li id="navtab"><a  id="navlink" href="Logout.php">Logout</a></li>
   <li id="headerLogo">ES<span id="headerSpan">Groove</span></li>
 </ul>
-
+<hr style="height: 15px; background-color: #444; border-color: #444; margin: 0; padding: 0;">
 </div>
-<br>
-<br>
 <?php
 $connection=@mysqli_connect('localhost', 'dmcdonald2', 'dmcdonald2', 'ESGrooveDB');   
 
@@ -31,9 +34,10 @@ $query1="select Bands.name, genre, numMembers, yearsActive, Members.name, instru
         join Instagram on Bands.name = Instagram.Bname
         join Twitter on Bands.name = Twitter.Bname
         join Merch on Bands.name = Merch.Bname
-        and ";
+        and 
+        ";
 
-if($_POST['BandSearchFilter'] == "bandName") {
+if($_POST['BandSearchFilter'] =="bandName") {
 
          $query1 .= " Bands.name like '%$artistName%'";
 
@@ -87,7 +91,7 @@ if($_POST['BandSearchFilter'] =="Stitle") {
 
 
 $r=mysqli_query($connection, $query1);
-echo "<table border='1' style='color:white; width:100%; table-layout:auto; font-size=12px; word-wrap: break-word;'>
+echo "<table border='1' style='color:white; width:100%; table-layout:auto; font-size=12px; word-wrap: break-word; ''>
 <thead>
 <tr>
 <th> Band name </th>
@@ -136,6 +140,7 @@ echo "</table>";
 echo "<br>";
 echo "<br>";
 ?>
+
 </body>
 <footer class="footer-distributed">
 
@@ -144,15 +149,17 @@ echo "<br>";
                 <h3>ES<span>Groove</span></h3>
 
                 <p class="footer-links">
-                    <a id="footerLink" href="index.php">Home</a>
+                   <a id="footerLink" href="indexAdmin.php">Home</a>
                     
-                    <a id="footerLink" href="Artists.php">Artists</a>
+                    <a id="footerLink" href="ArtistsAdmin.php">Artists</a>
                     
-                    <a id="footerLink" href="Venues.php">Venues</a>
+                    <a id="footerLink" href="VenuesAdmin.php">Venues</a>
                     
-                    <a id="footerLink" href="Performances.php">Performances</a>
+                    <a id="footerLink" href="PerformancesAdmin.php">Performances</a>
                     
-                    <a id="footerLink" href="Login.php">Login</a>
+                    <a id="footerLink" href="AdminMenu.php">Admin Menu</a>
+
+                    <a id="footerLink" href="Logout.php">Logout</a>
                     
                     <a href="#top">Back to top of page</a>
                 </p>
@@ -161,5 +168,5 @@ echo "<br>";
 
             </div>
         </footer>
-      
+       
 </html>

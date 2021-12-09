@@ -1,15 +1,31 @@
-<!--
-when selecting from drop down box, put the data selected into
-boxes that you cant change and into text boxes (that are obv changable)
-the data from the text boxes (updated info) and static boxes (original info) are
-sent to a conformation page (updateConfirmation.php perhaps?) using $_POST so the
- info can be easily used with php 
--->
-<?php
-session_start();
-?>
-<!DOCTYPE html>
 <html>
+<head>
+	<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <a name="top"></a>
+<div>
+	<ul id="navbar">
+  <li id="navtab"><a   id="navlink" href="indexAdmin.php">Home</a></li>
+  <li id="navtab"><a  id="navlink" href="ArtistsAdmin.php">Artists</a></li>
+  <li id="navtab"><a  id="navlink" href="VenuesAdmin.php">Venues</a></li>
+  <li id="navtab"><a  id="navlink" href="PerformancesAdmin.php">Performances</a></li>
+  <li id="navtab"><a  id="navlink" href="AdminMenu.php">Admin Menu</a></li>
+  <li id="navtab"><a  id="navlink" href="Logout.php">Logout</a></li>
+  <li id="headerLogo">ES<span id="headerSpan">Groove</span></li>
+</ul>
+<hr style="height: 15px; background-color: #444; border-color: #444; margin: 0; padding: 0;">
+</div>
+
+
+
+
+
+
+<?php
+include "checkSession.php";
+?>
+
 
 
 <?php
@@ -20,8 +36,8 @@ session_start();
 
 ?>
 
-<h style="font-size: 20pt"><b> Update Bands Table </b></h><br>
-<p> <u>Choose the row you want to edit. Sorted by name.</u> </p>
+<h style="font-size: 20pt; color: white"><b> Update Bands Table </b></h><br>
+<p style="color: white"> <u>Choose the row you want to edit. Sorted by name.</u> </p>
 
 
 
@@ -52,7 +68,7 @@ while($row=mysqli_fetch_array($r)){
 <br>
 <br>
 
-<form action="updateConfirmation.php" method="post">
+<form  style="color: white" action="updateConfirmation.php" method="post">
 <input type="text" id="nameBoxRead" name="nameRead" size="50" readonly="readonly">
 <label for="nameRead">Band Name</label>
 
@@ -75,7 +91,7 @@ while($row=mysqli_fetch_array($r)){
 
 <br><br><br><br><br>
 
-<u><h><b> Update Values: </h></b></u><br>
+<u><h style="color: white"><b> Update Values: </h></b></u><br>
 
 
 <input type="text" id="nameBox" name="name" size="50">
@@ -143,5 +159,28 @@ function insert()
 </script>
 
 
+
+
+</body>
+<footer class="footer-distributed">
+            <div class="footer-left">
+                <h3>ES<span>Groove</span></h3>
+                <p class="footer-links">
+                   <a id="footerLink" href="indexAdmin.php">Home</a>
+
+                    <a id="footerLink" href="ArtistsAdmin.php">Artists</a>
+
+                    <a id="footerLink" href="VenuesAdmin.php">Venues</a>
+
+                    <a id="footerLink" href="PerformancesAdmin.php">Performances</a>
+
+                    <a id="footerLink" href="AdminMenu.php">Admin Menu</a>
+                    <a id="footerLink" href="Logout.php">Logout</a>
+
+                    <a href="#top">Back to top of page</a>
+                </p>
+                <p class="footer-company-name">ESGroove © 2021</p>
+            </div>
+        </footer>
 
 </html>

@@ -33,7 +33,7 @@ include 'checkSession.php';
 <br>
 <br>
 <fieldset id="searchSet">
-<form action="deleteTableHome.php">
+<form action="deleteTableHome1.php">
 <h2 id="searchLabel">Delete from the database</h2>
 <input type="submit" id="submit" value="Delete" style ="width: 200px; height:50px; font-size: 30px;">
 </form>

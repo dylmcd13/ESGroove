@@ -21,13 +21,19 @@
 
   <fieldset id="searchSet">
 <legend id="searchLegend">Search Artists</legend>
-   <form>
+   <form action="searchBand.php" method="post">
 <label for="BandSearchFilter" id="searchLabel">Search By...</label>
 <select name="BandSearchFilter" id="BandSearchFilter" placeholder="Search by" >
 <option value="bandName">Band Name</option>
 <option value="genre">Genre</option>
 <option value="numMembers">Number of Members</option>
 <option value="years">Years Active</option>
+<option value="Atitle">Album title</option>
+<option value="Fbook">Facebook Url</option>
+<option value="insta">Instagram handle</option>
+<option value="twitter">Twitter Handle</option>
+<option value="memName">Member Name</option>
+<option value="Stitle">Song Title</option>
 </select>      
 <br>
 <input type="text" id = "artist" name="artist">
@@ -35,9 +41,6 @@
 <input type="submit" id="submit" >
    </form>   
   </fieldset>
-
-
-
 </body>
 <footer class="footer-distributed">
 
