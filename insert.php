@@ -1,40 +1,28 @@
-<html>
-<body>
 <?php
 
-$servername = 'localhost';
-$username = 'rpoholsky1';
-$password = 'rpoholsky1';
-$db = 'ESGrooveDB';
+$bandName = $_POST['bandName'];
+$bandGenre = $_POST['bandGenre'];
+$bandNumMembers = $_POST['bandNumMembers'];
+$bandYearsActive = $_POST['bandYearsActive'];
 
+$servername = "localhost";
+$username = "rpoholsky1";
+$password = "rpoholsky1";
+$db = "ESGrooveDB";
 
-if($connection=@mysqli_connect('localhost', 'rpoholsky1', 'rpoholsky1', 'ESGrooveDB')){
-        echo '<p>Successfully connected to MySql.</p>';
-}
-$bandName = $_POST['name'];
-$bandGenre = $_POST['genre'];
-$bandNumMembers = $_POST['numMembers'];
-$bandActiveYears = $_POST['yearsActive'];
+$conn = new mysqli($servername, $username, $password, $db);
 
-Tables :
-<select>
-        <option value = "Select">Select</option>}
-        <option value = "Bands">Bands</option>
-        <option value = "Venues">Venues</option>
-
-$sql = "INSERT INTO Bands (name, genre, numMembers, yearsActive)
-        VALUES ($bandName, $bandGenre, $bandNumMembers, $bandActiveYears)";
-
-$rs = mysqli_query($connection, $sql);
-
-if (mysqli_affected_rows($rs) == 1) {
-        echo "<p>Record inserted successfully</p>";
+if($conn->connect_error){
+        die("Connection failed: ". $conn->connect_error);
 }
 
+$sql = "insert into Bands(bandName, bandGenre, bandNumMembers, bandYearsActive)
+        values('$bandName', 'bandGenre', 'bandNumMembers', 'bandYearsActive')";
 
+if($conn->query($sql) === TRUE) {
+        echo "ADDED: ".$bandName.", ".bandGenre.", ".bandNumMembers.", "bandYearsActive;
+else{
+        echo "Error: ".$sql."<br>".$conn->error;
 
-mysqli_close($connection);
-
+$conn->close();
 ?>
-</body>
-</html>
